@@ -13,6 +13,7 @@ interface PageProps {
       title: string;
       description: string;
       date: string;
+      seoDate: string;
       thumbnail?: {
         large?: string;
         banner?: string;
