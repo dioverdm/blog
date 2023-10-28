@@ -14,7 +14,12 @@ import { motion, useScroll, useSpring } from "framer-motion";
 
 const components = {
   Button: Button,
+  a: CustomLink,
 };
+
+function CustomLink(props: any) {
+  return <a {...props} target="_blank" />;
+}
 
 interface FrontMatter {
   title: string;
