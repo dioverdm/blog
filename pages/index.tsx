@@ -102,6 +102,13 @@ const profiles = {
     bot: false,
     verified: false,
   },
+  gersti: {
+    author: "Gersti",
+    avatar: "./staff/Gersti.webp",
+    roleColor: "#ff69eb",
+    bot: false,
+    verified: false,
+  },
 };
 
 const FeatureItem: React.FC<{
@@ -358,7 +365,7 @@ const Home = () => {
           <h3 className="mt-4 text-2xl">
             keeping{" "}
             <span className="bg-gradient-brand bg-clip-text font-bold text-transparent">
-              2,500,000+
+              3,000,000+
             </span>{" "}
             users entertained
           </h3>
@@ -536,10 +543,10 @@ const Home = () => {
               </DiscordMessage>
 
               <DiscordMessage
-                profile="invis"
-                author={profiles.invis.author}
-                avatar={profiles.invis.avatar}
-                roleColor={profiles.invis.roleColor}
+                profile="gersti"
+                author={profiles.gersti.author}
+                avatar={profiles.gersti.avatar}
+                roleColor={profiles.gersti.roleColor}
               >
                 <DiscordReply
                   slot="reply"

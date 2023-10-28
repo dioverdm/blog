@@ -61,6 +61,7 @@ const BlogPost: NextPage<{
         <meta property="article:author" content={frontMatter.author.name} />
         <meta property="article:tag" content={frontMatter.tags[0]} />
         <meta property="article:tag" content={frontMatter.tags[1]} />
+        <meta property="article:tag" content={frontMatter.tags[2]} />
         {frontMatter.thumbnail?.large && (
           <meta
             key="og:image"
