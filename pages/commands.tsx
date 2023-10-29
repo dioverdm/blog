@@ -19,10 +19,11 @@ export default function Commands() {
   };
 
   return (
-    <><Head>
-      <title>Would You - Commands</title>
-    </Head>
-    <main className="px-8 xl:px-[17vw]">
+    <>
+      <Head>
+        <title>Would You - Commands</title>
+      </Head>
+      <main className="px-8 xl:px-[17vw]">
         <h1 className="mt-36 text-4xl font-bold text-brand-red-100 drop-shadow-red-glow">
           Commands
         </h1>
@@ -33,10 +34,14 @@ export default function Commands() {
 
             return (
               <div
-                className={`relative cursor-pointer overflow-hidden rounded-lg p-4 text-neutral-300 transition-all duration-300 ${openedCommand === c.name
+                className={`relative cursor-pointer overflow-hidden rounded-lg p-4 text-neutral-300 transition-all duration-300 ${
+                  openedCommand === c.name
                     ? "max-h-[250px] bg-neutral-700"
-                    : "max-h-[90px] bg-neutral-800"}`}
-                onClick={() => isActive ? setOpenedCommand("") : setOpenedCommand(c.name)}
+                    : "max-h-[90px] bg-neutral-800"
+                }`}
+                onClick={() =>
+                  isActive ? setOpenedCommand("") : setOpenedCommand(c.name)
+                }
                 key={c.name}
               >
                 <div className="flex items-center justify-between">
@@ -55,15 +60,19 @@ export default function Commands() {
                     height="30"
                     fill="currentColor"
                     viewBox="0 0 30 30"
-                    className={`transition-all duration-300 ${isActive
+                    className={`transition-all duration-300 ${
+                      isActive
                         ? "rotate-180 text-neutral-300"
-                        : "text-neutral-500"}`}
+                        : "text-neutral-500"
+                    }`}
                   >
                     <path d="M15 20.938a.93.93 0 0 1-.663-.275l-8.75-8.75a.938.938 0 1 1 1.327-1.327L15 18.674l8.088-8.088a.938.938 0 1 1 1.326 1.327l-8.75 8.75a.94.94 0 0 1-.665.274Z" />
                   </svg>
                 </div>
                 <div
-                  className={`transition-all duration-300 ${isActive ? "opacity-100" : "opacity-0"}`}
+                  className={`transition-all duration-300 ${
+                    isActive ? "opacity-100" : "opacity-0"
+                  }`}
                 >
                   <h5 className="mb-1">Usage</h5>
                   <h6
@@ -71,15 +80,15 @@ export default function Commands() {
                     onMouseEnter={() => {
                       setCopyText("--Click To Copy--");
                       setIsHovered(true);
-                    } }
+                    }}
                     onMouseLeave={() => {
                       setCopyText(c.usage);
                       setIsHovered(false);
-                    } }
+                    }}
                     onClick={(e) => {
                       e.stopPropagation();
                       handleCopyUsage(c.usage);
-                    } }
+                    }}
                   >
                     {isHovered ? (
                       <div className="text-gray-400">{copyText}</div>
@@ -108,6 +117,7 @@ export default function Commands() {
             );
           })}
         </div>
-      </main></>
+      </main>
+    </>
   );
 }
