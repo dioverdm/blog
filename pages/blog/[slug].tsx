@@ -104,11 +104,11 @@ const BlogPost: NextPage<{
             <p className="text-sm text-neutral-400">{frontMatter.date}</p>
           </div>
         </div>
-        <div className="mb-4 flex gap-1 border-b border-b-neutral-500 pb-4">
+        <div className="my-4 flex flex-wrap gap-1 border-b border-b-neutral-500 pb-4">
           {frontMatter.tags.map((tag) => (
             <p
               key={tag}
-              className="mt-4 rounded-full border border-neutral-500 px-2 py-1 text-xs text-neutral-300"
+              className="min-w-fit rounded-full border border-neutral-500 px-2 py-1 text-xs text-neutral-300"
             >
               {tag}
             </p>
