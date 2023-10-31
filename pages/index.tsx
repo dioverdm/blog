@@ -432,7 +432,7 @@ const Home = () => {
               <h4 className="text-center text-3xl font-bold text-white md:text-left">
                 Increase user engagement
               </h4>
-              <p className="text-center text-lg text-neutral-300 md:text-left">
+              <p className="text-center text-lg text-neutral-300 md:text-left w-[80%] max-w-full mx-auto sm:w-auto sm:mx-0">
                 Keep your community engaged and active with daily &quot;Would
                 You Rather&quot; messages!
               </p>
