@@ -193,7 +193,7 @@ const Home = () => {
           </h1>
           <p className="text-lg text-neutral-300">
             Play fun and entertaining games with Would You, featuring user polls
-            and customization. Play Would You Rather, Never Have I Ever, Higher
+            and customization. Play Would You Rather, Truth or Dare, Never Have I Ever, Higher
             or Lower, and What Would You Do!
           </p>
           <Link href="/invite" target="_blank">
