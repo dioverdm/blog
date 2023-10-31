@@ -122,7 +122,7 @@ export default function Document() {
           property="og:description"
           content="Would you lets you play Would You Rather, Never Have I Ever, Higher or Lower, and What Would You Do on Discord!"
         />
-        <meta property="og:title" content="Would You | Discord Bot" />
+        <meta property="og:title" content="Would You | The Discord Bot" />
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:image" content="0" />
         <meta name="theme-color" content="#FF8C00" />
