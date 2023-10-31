@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@media screen and (max-width: 350px) {
+    .discord-message:first-child {
+        @apply w-[80%] my-[0.5rem] ml-[2rem] mr-auto;
+    }
+}
