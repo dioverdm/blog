@@ -45,29 +45,31 @@ export default function Commands() {
                 key={c.name}
               >
                 <div className="flex items-center justify-between">
-                  <div>
+                  <div className="grow overflow-hidden">
                     <h4 className="mb-1 text-lg font-bold text-white">
                       <span className="mr-0.5 text-neutral-500">/</span>
                       {c.name}
                     </h4>
-                    <p className="mb-3 text-ellipsis whitespace-nowrap text-sm">
+                    <p className="mb-3 max-w-full overflow-hidden text-ellipsis whitespace-nowrap text-sm">
                       {c.description}
                     </p>
                   </div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="30"
-                    height="30"
-                    fill="currentColor"
-                    viewBox="0 0 30 30"
-                    className={`transition-all duration-300 ${
-                      isActive
-                        ? "rotate-180 text-neutral-300"
-                        : "text-neutral-500"
-                    }`}
-                  >
-                    <path d="M15 20.938a.93.93 0 0 1-.663-.275l-8.75-8.75a.938.938 0 1 1 1.327-1.327L15 18.674l8.088-8.088a.938.938 0 1 1 1.326 1.327l-8.75 8.75a.94.94 0 0 1-.665.274Z" />
-                  </svg>
+                  <div className="h-[30px] w-[30px]">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="30"
+                      height="30"
+                      fill="currentColor"
+                      viewBox="0 0 30 30"
+                      className={`transition-all duration-300 ${
+                        isActive
+                          ? "rotate-180 text-neutral-300"
+                          : "text-neutral-500"
+                      }`}
+                    >
+                      <path d="M15 20.938a.93.93 0 0 1-.663-.275l-8.75-8.75a.938.938 0 1 1 1.327-1.327L15 18.674l8.088-8.088a.938.938 0 1 1 1.326 1.327l-8.75 8.75a.94.94 0 0 1-.665.274Z" />
+                    </svg>
+                  </div>
                 </div>
                 <div
                   className={`transition-all duration-300 ${
