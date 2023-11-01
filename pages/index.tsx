@@ -174,7 +174,7 @@ const Home = () => {
 
   return (
     <main className="mt-48 overflow-x-hidden text-neutral-300">
-      <section className="flex flex-col items-center justify-between gap-8 px-8 text-center lg:flex-row lg:text-left xl:px-[17vw]">
+      <section className="flex flex-col items-center justify-between gap-8 sm:px-8 text-center lg:flex-row lg:text-left xl:px-[17vw]">
         <motion.div
           initial={{ opacity: 0, transform: "translateY(20px)" }}
           whileInView={{ opacity: 1, transform: "translateY(0)" }}
@@ -220,6 +220,7 @@ const Home = () => {
           whileInView={{ opacity: 1, transform: "translateY(0)" }}
           transition={{ duration: 0.7, ease: "easeInOut" }}
           viewport={{ once: true }}
+          style={{width: "95%", marginLeft: "auto", marginRight: "auto"}}
         >
           <DiscordMessages class="overflow-x-hidden rounded-lg text-left shadow">
             <DiscordMessage
