@@ -116,7 +116,7 @@ const FeatureItem: React.FC<{
   right: React.ReactNode;
   reverse?: true;
 }> = ({ left, right, reverse }) => (
-  <div className="flex flex-col justify-between gap-20 md:flex-row">
+  <div className="flex flex-col justify-between gap-20 md:flex-row maindiv">
     <motion.div
       initial={{ opacity: 0, transform: "translateX(-50px)" }}
       whileInView={{ opacity: 1, transform: "translateX(0)" }}
@@ -220,7 +220,7 @@ const Home = () => {
           whileInView={{ opacity: 1, transform: "translateY(0)" }}
           transition={{ duration: 0.7, ease: "easeInOut" }}
           viewport={{ once: true }}
-          style={{width: "95%", marginLeft: "auto", marginRight: "auto"}}
+          style={{width: "90%", marginLeft: "auto", marginRight: "auto"}}
         >
           <DiscordMessages class="overflow-x-hidden rounded-lg text-left shadow">
             <DiscordMessage
