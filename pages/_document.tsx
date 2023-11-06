@@ -19,7 +19,7 @@ export default function Document() {
               "name":"Would You Bot",
               "url":"https://wouldyoubot.gg",
               "logo":"https://i.imgur.com/YjwOfOX.png",
-              "image":"https://i.imgur.com/jv5nCgK.png",
+              "image":"https://i.imgur.com/OPQaiVa.png",
               "description":"Would you lets you play Would You Rather, Never Have I Ever, Higher or Lower, Truth or Dare and What Would You Do on Discord!",
               "sameAs":[
                  "https://twitter.com/wouldyoubot",
@@ -125,8 +125,8 @@ export default function Document() {
         <meta property="og:title" content="Would You | The Discord Bot" />
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:image" content="0" />
-        <meta name="theme-color" content="#FF8C00" />
-        <meta name="msapplication-TileColor" content="#FF8C00" />
+        <meta name="theme-color" content="#0598F6" />
+        <meta name="msapplication-TileColor" content="#0598F6" />
       </Head>
       <body>
         <Main />
