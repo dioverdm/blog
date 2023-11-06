@@ -116,7 +116,7 @@ const FeatureItem: React.FC<{
   right: React.ReactNode;
   reverse?: true;
 }> = ({ left, right, reverse }) => (
-  <div className="flex flex-col justify-between gap-20 md:flex-row maindiv">
+  <div className="maindiv flex flex-col justify-between gap-20 md:flex-row">
     <motion.div
       initial={{ opacity: 0, transform: "translateX(-50px)" }}
       whileInView={{ opacity: 1, transform: "translateX(0)" }}
@@ -174,12 +174,13 @@ const Home = () => {
 
   return (
     <main className="mt-48 overflow-x-hidden text-neutral-300">
-      <section className="flex flex-col items-center justify-between gap-8 sm:px-8 text-center lg:flex-row lg:text-left xl:px-[17vw]">
+      <section className="flex flex-col items-center justify-between gap-8 text-center lg:flex-row lg:text-left xl:px-[17vw]">
         <motion.div
           initial={{ opacity: 0, transform: "translateY(20px)" }}
           whileInView={{ opacity: 1, transform: "translateY(0)" }}
           transition={{ duration: 0.7, ease: "easeInOut" }}
           viewport={{ once: true }}
+          className="px-8"
         >
           <h1 className="text-6xl font-bold leading-normal text-white">
             Entertain Your
@@ -220,7 +221,7 @@ const Home = () => {
           whileInView={{ opacity: 1, transform: "translateY(0)" }}
           transition={{ duration: 0.7, ease: "easeInOut" }}
           viewport={{ once: true }}
-          style={{width: "90%", marginLeft: "auto", marginRight: "auto"}}
+          style={{ width: "90%", marginLeft: "auto", marginRight: "auto" }}
         >
           <DiscordMessages class="overflow-x-hidden rounded-lg text-left shadow">
             <DiscordMessage
@@ -433,7 +434,7 @@ const Home = () => {
               <h4 className="text-center text-3xl font-bold text-white md:text-left">
                 Increase user engagement
               </h4>
-              <p className="text-center text-lg text-neutral-300 md:text-left w-[80%] max-w-full mx-auto sm:w-auto sm:mx-0">
+              <p className="mx-auto text-center text-lg text-neutral-300 md:text-left">
                 Keep your community engaged and active with daily &quot;Would
                 You Rather&quot; messages!
               </p>
