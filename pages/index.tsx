@@ -31,7 +31,7 @@ const questions = [
   "Would you rather have no one show up to your wedding or to your funeral?",
   "Would you rather not be able to taste or not be able to smell?",
   "Would you rather always have to say everything on your mind or never speak again?",
-  "Would you rather be famous when you are alive and forgotten when you die, or unknown when you are alive but famous after you die?"
+  "Would you rather be famous when you are alive and forgotten when you die, or unknown when you are alive but famous after you die?",
 ];
 
 const getRandomQuestion = () =>
@@ -409,7 +409,7 @@ const Home = () => {
                 </DiscordMention>
                 <DiscordEmbed slot="embeds" color="#1e88e5">
                   <DiscordEmbedDescription slot="description">
-                  Would you rather be able to control fire 🔥 or water 💧?
+                    Would you rather be able to control fire 🔥 or water 💧?
                   </DiscordEmbedDescription>
                   <DiscordEmbedFooter slot="footer">
                     Daily Message | Type: Mixed | ID: 34
@@ -449,8 +449,8 @@ const Home = () => {
               </h4>
               <p className="text-center text-lg text-neutral-300 md:text-left">
                 Entertain your discord server with fun and interactive games
-                like Would You Rather, Truth or Dare, Never Have I Ever, Higher or Lower, and
-                What Would You Do!
+                like Would You Rather, Truth or Dare, Never Have I Ever, Higher
+                or Lower, and What Would You Do!
               </p>
             </>
           }
