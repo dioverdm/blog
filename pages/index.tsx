@@ -357,7 +357,7 @@ const Home = () => {
         />
         <div className="bg-[#101010] px-8 pb-12 text-center text-5xl text-white md:-mt-20 md:pb-28 xl:px-[17vw]">
           <h2>
-            Used by{" "}
+            Trusted by{" "}
             <span className="bg-gradient-brand bg-clip-text font-bold text-transparent">
               {serverCount.toLocaleString()}+
             </span>{" "}
