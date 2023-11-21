@@ -53,9 +53,9 @@ const BlogPost: NextPage<{
   return (
     <>
       <Head>
-        <title>{frontMatter.title}</title>
+        <title>{frontMatter.title + "- Would You Bot"}</title>
         <meta name="description" content={frontMatter.description} />
-        <meta property="og:title" content={frontMatter.title} />
+        <meta property="og:title" content={frontMatter.title + "- Would You Bot"} />
         <meta property="og:description" content={frontMatter.description} />
         <meta property="og:type" content="article" />
         <meta property="article:published_time" content={frontMatter.seoDate} />
@@ -83,7 +83,7 @@ const BlogPost: NextPage<{
         {frontMatter.thumbnail?.banner && (
           <Image
             src={frontMatter.thumbnail.banner}
-            alt={frontMatter.title}
+            alt={frontMatter.title + "- Would You Bot"}
             width={1000}
             height={200}
             className="mb-4 h-auto w-full rounded-lg"
