@@ -31,6 +31,8 @@ interface PageProps {
 }
 
 const BlogPosts: NextPage<PageProps> = ({ posts }) => {
+
+
   return (
     <main className="px-8 xl:px-[17vw]">
       <h1 className="mt-36 text-4xl font-bold text-white">

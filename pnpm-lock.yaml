@@ -56,6 +56,9 @@ dependencies:
   typescript:
     specifier: ^5.0.4
     version: 5.0.4
+  use-next-blurhash:
+    specifier: ^1.0.5
+    version: 1.0.5(react@18.2.0)
 
 devDependencies:
   autoprefixer:
@@ -741,6 +744,10 @@ packages:
       buffer: 5.7.1
       inherits: 2.0.4
       readable-stream: 3.6.2
+    dev: false
+
+  /blurhash@1.1.5:
+    resolution: {integrity: sha512-a+LO3A2DfxTaTztsmkbLYmUzUeApi0LZuKalwbNmqAHR6HhJGMt1qSV/R3wc+w4DL28holjqO3Bg74aUGavGjg==}
     dev: false
 
   /brace-expansion@1.1.11:
@@ -3807,6 +3814,16 @@ packages:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
     dependencies:
       punycode: 2.3.0
+    dev: false
+
+  /use-next-blurhash@1.0.5(react@18.2.0):
+    resolution: {integrity: sha512-PMu7054Ic6zDKjjKT2PCsfJrMYmdcrfj6miUZzkfes+fxQ9YlwM44qmtbedQpRAncuzQJEW3fVK9jeNqUFgzvg==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: '>=16'
+    dependencies:
+      blurhash: 1.1.5
+      react: 18.2.0
     dev: false
 
   /util-deprecate@1.0.2:
