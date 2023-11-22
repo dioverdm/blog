@@ -55,7 +55,10 @@ const BlogPost: NextPage<{
       <Head>
         <title>{frontMatter.title + "- Would You Bot"}</title>
         <meta name="description" content={frontMatter.description} />
-        <meta property="og:title" content={frontMatter.title + "- Would You Bot"} />
+        <meta
+          property="og:title"
+          content={frontMatter.title + "- Would You Bot"}
+        />
         <meta property="og:description" content={frontMatter.description} />
         <meta property="og:type" content="article" />
         <meta property="article:published_time" content={frontMatter.seoDate} />
