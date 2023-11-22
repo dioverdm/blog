@@ -37,7 +37,30 @@ interface FrontMatter {
   };
   tags: string[];
   pinned?: boolean;
+  toc?: string[];
 }
+
+interface TableOfContentsProps {
+  toc: string[];
+}
+
+const TableOfContents = ({ toc }: TableOfContentsProps) => {
+  if (toc.length === 0) return null;
+  return (
+    <div className="flex max-w-full flex-col gap-1 xl:max-w-[200px] 2xl:max-w-[240px]">
+      <p className="mb-1 font-semibold text-white">TABLE OF CONTENTS</p>
+      <ol>
+        {toc.map((x) => {
+          return (
+            <li key={x} className="mt-3">
+              <p className="text-sm text-[#D4D4D4]">{x}</p>
+            </li>
+          );
+        })}
+      </ol>
+    </div>
+  );
+};
 
 const BlogPost: NextPage<{
   source: MDXRemoteSerializeResult;
@@ -74,7 +97,6 @@ const BlogPost: NextPage<{
           />
         )}
       </Head>
-
       <motion.div className={blogStyles["progress-bar"]} style={{ scaleX }} />
       <div className="mt-36 px-8 text-neutral-300 xl:px-[17vw]">
         <Link
@@ -116,6 +138,9 @@ const BlogPost: NextPage<{
               {tag}
             </p>
           ))}
+        </div>
+        <div className="xl: relative left-0 top-0 mb-10 flex border-b border-neutral-500 pb-5 xl:fixed xl:left-4 xl:top-40 xl:border-b-0">
+          <TableOfContents toc={frontMatter.toc || []} />
         </div>
       </div>
 
