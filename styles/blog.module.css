@@ -3,9 +3,16 @@
 }
 
 .markdown img {
-  width: 100%;
-  max-width: 800px;
-  border-radius: 5px;
+  max-width: 70%;
+  height: auto;
+}
+
+.markdown img.horizontal {
+  width: 450px;
+}
+
+.markdown img.vertical {
+  height: 250px;
 }
 
 .markdown p,
