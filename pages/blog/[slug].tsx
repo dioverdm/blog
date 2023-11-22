@@ -97,9 +97,6 @@ const BlogPost: NextPage<{
           />
         )}
       </Head>
-      <div className="fixed left-4 top-40 z-50 hidden xl:flex">
-        <TableOfContents toc={frontMatter.toc || []} />
-      </div>
       <motion.div className={blogStyles["progress-bar"]} style={{ scaleX }} />
       <div className="mt-36 px-8 text-neutral-300 xl:px-[17vw]">
         <Link
@@ -142,7 +139,7 @@ const BlogPost: NextPage<{
             </p>
           ))}
         </div>
-        <div className="mb-10 flex border-b border-neutral-500 pb-5 xl:hidden">
+        <div className="xl: relative left-0 top-0 mb-10 flex border-b border-neutral-500 pb-5 xl:fixed xl:left-4 xl:top-40 xl:border-b-0">
           <TableOfContents toc={frontMatter.toc || []} />
         </div>
       </div>
