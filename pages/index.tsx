@@ -1,5 +1,7 @@
 import Button from "@/components/Button";
 import ServerMarquee from "@/components/ServerMarquee";
+import Head from "next/head";
+
 import {
   DiscordActionRow,
   DiscordAttachments,
@@ -172,230 +174,322 @@ const Home = () => {
   };
 
   return (
-    <main className="mt-48 overflow-x-hidden text-neutral-300">
-      <section className="flex flex-col items-center justify-between gap-8 text-center lg:flex-row lg:text-left xl:px-[17vw]">
-        <motion.div
-          initial={{ opacity: 0, transform: "translateY(20px)" }}
-          whileInView={{ opacity: 1, transform: "translateY(0)" }}
-          transition={{ duration: 0.7, ease: "easeInOut" }}
-          viewport={{ once: true }}
-          className="px-8"
-        >
-          <h1 className="text-6xl font-bold leading-normal text-white">
-            Entertain Your
-            <br />
-            <span className="text-brand-red-100 drop-shadow-red-glow">
-              Discord
-            </span>{" "}
-            <span className="text-brand-blue-100 drop-shadow-blue-glow">
-              Server
-            </span>
-          </h1>
-          <p className="text-lg text-neutral-300">
-            Play fun and entertaining games with Would You, featuring user polls
-            and customization. Play Would You Rather, Truth or Dare, Never Have
-            I Ever, Higher or Lower, and What Would You Do!
-          </p>
-          <Link href="/invite" target="_blank">
-            <Button className="mx-auto mt-8 gap-2 lg:mx-0">
-              Unleash the Fun
-              <svg
-                width="13"
-                height="13"
-                fillRule="evenodd"
-                clipRule="evenodd"
-                viewBox="0 0 509 511.54"
-              >
-                <path
-                  fillRule="nonzero"
-                  fill="#fff"
-                  d="M447.19 347.03c0-17.06 13.85-30.91 30.91-30.91 17.05 0 30.9 13.85 30.9 30.91v87.82c0 21.08-8.63 40.29-22.51 54.18-13.88 13.88-33.09 22.51-54.18 22.51H76.69c-21.09 0-40.3-8.63-54.18-22.51C8.63 475.14 0 455.93 0 434.85V76.69c0-21.09 8.63-40.3 22.51-54.18C36.39 8.63 55.6 0 76.69 0h86.98c17.06 0 30.9 13.85 30.9 30.9 0 17.06-13.84 30.91-30.9 30.91H76.69c-4.07 0-7.82 1.69-10.51 4.37-2.68 2.69-4.37 6.44-4.37 10.51v358.16c0 4.06 1.69 7.82 4.37 10.5 2.69 2.68 6.44 4.38 10.51 4.38h355.62c4.07 0 7.82-1.7 10.51-4.38 2.68-2.68 4.37-6.44 4.37-10.5v-87.82zm0-243.56L308.15 244.28c-11.91 12.12-31.45 12.28-43.56.37-12.11-11.91-12.28-31.45-.37-43.56L401.77 61.81H309.7c-17.06 0-30.9-13.85-30.9-30.91 0-17.05 13.84-30.9 30.9-30.9h168.4C495.15 0 509 13.85 509 30.9v165.04c0 17.06-13.85 30.9-30.9 30.9-17.06 0-30.91-13.84-30.91-30.9v-92.47z"
-                />
-              </svg>
-            </Button>
-          </Link>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, transform: "translateY(20px)" }}
-          whileInView={{ opacity: 1, transform: "translateY(0)" }}
-          transition={{ duration: 0.7, ease: "easeInOut" }}
-          viewport={{ once: true }}
-          style={{ width: "90%", marginLeft: "auto", marginRight: "auto" }}
-        >
-          <DiscordMessages class="overflow-x-hidden rounded-lg text-left shadow">
-            <DiscordMessage
-              profile="wouldyou"
-              author={profiles.wouldyou.author}
-              avatar={profiles.wouldyou.avatar}
-              roleColor={profiles.wouldyou.roleColor}
-              bot={profiles.wouldyou.bot}
-              verified={profiles.wouldyou.verified}
-              edited={replayedRounds > 0}
-            >
-              <DiscordCommand
-                slot="reply"
-                profile="dominik"
-                author={profiles.dominik.author}
-                avatar={profiles.dominik.avatar}
-                roleColor={profiles.dominik.roleColor}
-                command="/wouldyourather"
-              />
-              <DiscordEmbed slot="embeds" color="#1e88e5">
-                <DiscordEmbedDescription slot="description">
-                  {currentQuestion}
-                </DiscordEmbedDescription>
-                <DiscordEmbedFooter
-                  slot="footer"
-                  footerImage="./staff/Dominik.webp"
+    <><Head>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: `
+            {
+              "@context":"http://schema.org",
+              "@type":"Product",
+              "name":"Would You Bot",
+              "url":"https://wouldyoubot.gg",
+              "logo":"https://i.imgur.com/YjwOfOX.png",
+              "image":"https://i.imgur.com/OPQaiVa.png",
+              "description":"Would you lets you play Would You Rather, Never Have I Ever, Higher or Lower, Truth or Dare and What Would You Do on Discord!",
+              "sameAs":[
+                 "https://twitter.com/wouldyoubot",
+                 "https://www.youtube.com/@wouldyoubot",
+                 "https://top.gg/bot/981649513427111957"
+              ],
+              "offers":{
+                "@type":"Offer",
+                "availability":"https://schema.org/OnlineOnly",
+                "price":"0.00",
+                "priceCurrency":"USD",
+                "url":"https://wouldyoubot.gg"
+             },
+             "review":{
+              "@type":"Review",
+              "reviewRating":{
+                 "@type":"Rating",
+                 "bestRating":5,
+                 "worstRating":1,
+                 "ratingValue":5
+              },
+              "author":{
+                 "@type":"Person",
+                 "name":"policechase"
+              },
+              "reviewBody":"Man, this developer gives one on one support with the team. Absolute legend."
+           },
+           "aggregateRating":{
+              "@type":"AggregateRating",
+              "ratingValue":5,
+              "ratingCount":34,
+              "bestRating":5,
+              "worstRating":1
+           }
+        }
+  `,
+        }}
+      ></script>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: `
+            {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "How can I increase the activity on my Discord server?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Using a popular engagement bot such as Would You can help revive activity on your server. This bot allows your community to play games like Would You Rather, Truth or Dare, Never Have I Ever, or Higher or Lower on Discord."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How do I invite the would you rather discord bot?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "To invite the Would You Discord bot, visit their website at https://wouldyoubot.gg/ and click on the 'unleash the fun' button. This will take you to Discord, where you will be prompted to invite the bot."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can I play would you rather on Discord?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, you can. To play would you rather on Discord, go to https://wouldyoubot.gg and click the 'unleash the fun' button to invite the would you rather bot!"
+                  }
+                }
+              ]
+            }
+  `,
+        }}
+      ></script>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: `
+            {
+              "@context": "http://schema.org",
+              "@type": "VideoObject",
+              "name": "How to use Would You Bot",
+              "description": "https://wouldyoubot.com/  Boost Your Discord Server's Engagement with 'Would You' Bot! Discover how this powerful Discord bot revolutionizes your community interactions, sparking lively discussions, and keeping your server active. Engage your members with captivating 'Would You Rather' questions, polls, and games, fostering a dynamic and thriving community. Watch our video for a comprehensive overview and step-by-step setup guide to unleash the full potential of 'Would You' bot and take your Discord server to the next level!",
+              "thumbnailUrl": "https://i.ytimg.com/vi/x6BMCtgIy-8/default.jpg",
+              "uploadDate": "2023-06-21T13:03:23Z",
+              "duration": "PT30S",
+              "embedUrl": "https://www.youtube.com/embed/x6BMCtgIy-8",
+              "interactionCount": "166"
+            }
+  `,
+        }}
+      ></script>
+    </Head><main className="mt-48 overflow-x-hidden text-neutral-300">
+        <section className="flex flex-col items-center justify-between gap-8 text-center lg:flex-row lg:text-left xl:px-[17vw]">
+          <motion.div
+            initial={{ opacity: 0, transform: "translateY(20px)" }}
+            whileInView={{ opacity: 1, transform: "translateY(0)" }}
+            transition={{ duration: 0.7, ease: "easeInOut" }}
+            viewport={{ once: true }}
+            className="px-8"
+          >
+            <h1 className="text-6xl font-bold leading-normal text-white">
+              Entertain Your
+              <br />
+              <span className="text-brand-red-100 drop-shadow-red-glow">
+                Discord
+              </span>{" "}
+              <span className="text-brand-blue-100 drop-shadow-blue-glow">
+                Server
+              </span>
+            </h1>
+            <p className="text-lg text-neutral-300">
+              Play fun and entertaining games with Would You, featuring user polls
+              and customization. Play Would You Rather, Truth or Dare, Never Have
+              I Ever, Higher or Lower, and What Would You Do!
+            </p>
+            <Link href="/invite" target="_blank">
+              <Button className="mx-auto mt-8 gap-2 lg:mx-0">
+                Unleash the Fun
+                <svg
+                  width="13"
+                  height="13"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  viewBox="0 0 509 511.54"
                 >
-                  Requested by dominikdev | Type: General | ID: 64
-                </DiscordEmbedFooter>
-              </DiscordEmbed>
-              <DiscordAttachments slot="components">
-                <DiscordActionRow>
-                  <DiscordButton type="secondary">Results</DiscordButton>
-                  <DiscordButton type="primary">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 36 36"
-                      width="36"
-                      height="36"
-                      className="h-5 w-5"
-                    >
-                      <path
-                        fill="#3B88C3"
-                        d="M36 32a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4a4 4 0 0 1 4-4h28a4 4 0 0 1 4 4v28z"
-                      />
-                      <path
-                        fill="#FFF"
-                        d="M16.462 11.175h-1.829c-1.488 0-2.108-1.085-2.108-2.139 0-1.085.775-2.14 2.108-2.14h4.402c1.334 0 2.078.961 2.078 2.201V26.74c0 1.551-.992 2.418-2.326 2.418-1.333 0-2.325-.867-2.325-2.418V11.175z"
-                      />
-                    </svg>
-                  </DiscordButton>
-                  <DiscordButton type="primary">
-                    <svg
-                      viewBox="0 0 36 36"
-                      width="36"
-                      height="36"
-                      className="h-5 w-5"
-                    >
+                  <path
+                    fillRule="nonzero"
+                    fill="#fff"
+                    d="M447.19 347.03c0-17.06 13.85-30.91 30.91-30.91 17.05 0 30.9 13.85 30.9 30.91v87.82c0 21.08-8.63 40.29-22.51 54.18-13.88 13.88-33.09 22.51-54.18 22.51H76.69c-21.09 0-40.3-8.63-54.18-22.51C8.63 475.14 0 455.93 0 434.85V76.69c0-21.09 8.63-40.3 22.51-54.18C36.39 8.63 55.6 0 76.69 0h86.98c17.06 0 30.9 13.85 30.9 30.9 0 17.06-13.84 30.91-30.9 30.91H76.69c-4.07 0-7.82 1.69-10.51 4.37-2.68 2.69-4.37 6.44-4.37 10.51v358.16c0 4.06 1.69 7.82 4.37 10.5 2.69 2.68 6.44 4.38 10.51 4.38h355.62c4.07 0 7.82-1.7 10.51-4.38 2.68-2.68 4.37-6.44 4.37-10.5v-87.82zm0-243.56L308.15 244.28c-11.91 12.12-31.45 12.28-43.56.37-12.11-11.91-12.28-31.45-.37-43.56L401.77 61.81H309.7c-17.06 0-30.9-13.85-30.9-30.91 0-17.05 13.84-30.9 30.9-30.9h168.4C495.15 0 509 13.85 509 30.9v165.04c0 17.06-13.85 30.9-30.9 30.9-17.06 0-30.91-13.84-30.91-30.9v-92.47z" />
+                </svg>
+              </Button>
+            </Link>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, transform: "translateY(20px)" }}
+            whileInView={{ opacity: 1, transform: "translateY(0)" }}
+            transition={{ duration: 0.7, ease: "easeInOut" }}
+            viewport={{ once: true }}
+            style={{ width: "90%", marginLeft: "auto", marginRight: "auto" }}
+          >
+            <DiscordMessages class="overflow-x-hidden rounded-lg text-left shadow">
+              <DiscordMessage
+                profile="wouldyou"
+                author={profiles.wouldyou.author}
+                avatar={profiles.wouldyou.avatar}
+                roleColor={profiles.wouldyou.roleColor}
+                bot={profiles.wouldyou.bot}
+                verified={profiles.wouldyou.verified}
+                edited={replayedRounds > 0}
+              >
+                <DiscordCommand
+                  slot="reply"
+                  profile="dominik"
+                  author={profiles.dominik.author}
+                  avatar={profiles.dominik.avatar}
+                  roleColor={profiles.dominik.roleColor}
+                  command="/wouldyourather" />
+                <DiscordEmbed slot="embeds" color="#1e88e5">
+                  <DiscordEmbedDescription slot="description">
+                    {currentQuestion}
+                  </DiscordEmbedDescription>
+                  <DiscordEmbedFooter
+                    slot="footer"
+                    footerImage="./staff/Dominik.webp"
+                  >
+                    Requested by dominikdev | Type: General | ID: 64
+                  </DiscordEmbedFooter>
+                </DiscordEmbed>
+                <DiscordAttachments slot="components">
+                  <DiscordActionRow>
+                    <DiscordButton type="secondary">Results</DiscordButton>
+                    <DiscordButton type="primary">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 36 36"
                         width="36"
                         height="36"
+                        className="h-5 w-5"
                       >
                         <path
                           fill="#3B88C3"
-                          d="M36 32a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4a4 4 0 0 1 4-4h28a4 4 0 0 1 4 4v28z"
-                        />
+                          d="M36 32a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4a4 4 0 0 1 4-4h28a4 4 0 0 1 4 4v28z" />
                         <path
                           fill="#FFF"
-                          d="M23.086 24.907c1.365 0 2.42.62 2.42 2.046 0 1.427-1.055 2.047-2.233 2.047H12.917c-1.364 0-2.418-.62-2.418-2.047 0-.65.403-1.209.713-1.581 2.573-3.069 5.364-5.86 7.721-9.271.558-.806 1.085-1.768 1.085-2.884 0-1.271-.961-2.387-2.233-2.387-3.566 0-1.86 5.023-4.837 5.023-1.488 0-2.264-1.054-2.264-2.264 0-3.906 3.473-7.038 7.287-7.038 3.815 0 6.883 2.512 6.883 6.449 0 4.309-4.805 8.589-7.441 11.906h5.673z"
-                        />
+                          d="M16.462 11.175h-1.829c-1.488 0-2.108-1.085-2.108-2.139 0-1.085.775-2.14 2.108-2.14h4.402c1.334 0 2.078.961 2.078 2.201V26.74c0 1.551-.992 2.418-2.326 2.418-1.333 0-2.325-.867-2.325-2.418V11.175z" />
                       </svg>
-                    </svg>
-                  </DiscordButton>
-                </DiscordActionRow>
-                <DiscordActionRow>
-                  {replayedRounds < 3 ? (
-                    <DiscordButton type="primary" onClick={() => replay()}>
+                    </DiscordButton>
+                    <DiscordButton type="primary">
                       <svg
                         viewBox="0 0 36 36"
                         width="36"
                         height="36"
-                        className="mr-2 h-5 w-5"
+                        className="h-5 w-5"
                       >
-                        <path
-                          fill="#FFF"
-                          d="M22.242 22.242l2.829 2.829c-3.905 3.905-10.237 3.904-14.143-.001-2.247-2.246-3.194-5.296-2.854-8.225l-4.037.367c-.215 3.84 1.128 7.752 4.062 10.687 5.467 5.467 14.333 5.468 19.799 0l2.828 2.828.849-9.334-9.333.849zM27.899 8.1C22.431 2.633 13.568 2.633 8.1 8.1L5.272 5.272l-.849 9.334 9.334-.849-2.829-2.829c3.906-3.905 10.236-3.905 14.142 0 2.248 2.247 3.194 5.297 2.856 8.226l4.036-.366c.216-3.841-1.128-7.753-4.063-10.688z"
-                        />
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 36 36"
+                          width="36"
+                          height="36"
+                        >
+                          <path
+                            fill="#3B88C3"
+                            d="M36 32a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4a4 4 0 0 1 4-4h28a4 4 0 0 1 4 4v28z" />
+                          <path
+                            fill="#FFF"
+                            d="M23.086 24.907c1.365 0 2.42.62 2.42 2.046 0 1.427-1.055 2.047-2.233 2.047H12.917c-1.364 0-2.418-.62-2.418-2.047 0-.65.403-1.209.713-1.581 2.573-3.069 5.364-5.86 7.721-9.271.558-.806 1.085-1.768 1.085-2.884 0-1.271-.961-2.387-2.233-2.387-3.566 0-1.86 5.023-4.837 5.023-1.488 0-2.264-1.054-2.264-2.264 0-3.906 3.473-7.038 7.287-7.038 3.815 0 6.883 2.512 6.883 6.449 0 4.309-4.805 8.589-7.441 11.906h5.673z" />
+                        </svg>
                       </svg>
-                      New Question
                     </DiscordButton>
-                  ) : (
-                    <DiscordButton
-                      type="secondary"
-                      onClick={() =>
-                        window.open("https://wouldyoubot.gg/invite", "_blank")
-                      }
-                    >
-                      <svg
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        className="mr-2 h-5 w-5"
+                  </DiscordActionRow>
+                  <DiscordActionRow>
+                    {replayedRounds < 3 ? (
+                      <DiscordButton type="primary" onClick={() => replay()}>
+                        <svg
+                          viewBox="0 0 36 36"
+                          width="36"
+                          height="36"
+                          className="mr-2 h-5 w-5"
+                        >
+                          <path
+                            fill="#FFF"
+                            d="M22.242 22.242l2.829 2.829c-3.905 3.905-10.237 3.904-14.143-.001-2.247-2.246-3.194-5.296-2.854-8.225l-4.037.367c-.215 3.84 1.128 7.752 4.062 10.687 5.467 5.467 14.333 5.468 19.799 0l2.828 2.828.849-9.334-9.333.849zM27.899 8.1C22.431 2.633 13.568 2.633 8.1 8.1L5.272 5.272l-.849 9.334 9.334-.849-2.829-2.829c3.906-3.905 10.236-3.905 14.142 0 2.248 2.247 3.194 5.297 2.856 8.226l4.036-.366c.216-3.841-1.128-7.753-4.063-10.688z" />
+                        </svg>
+                        New Question
+                      </DiscordButton>
+                    ) : (
+                      <DiscordButton
+                        type="secondary"
+                        onClick={() => window.open("https://wouldyoubot.gg/invite", "_blank")}
                       >
-                        <path
-                          fill="currentColor"
-                          d="M10 5V3H5.375A2.377 2.377 0 0 0 3 5.375v13.25A2.377 2.377 0 0 0 5.375 21h13.25A2.376 2.376 0 0 0 21 18.625V14h-2v5H5V5h5Z"
-                        />
-                        <path
-                          fill="currentColor"
-                          d="M21 2.999h-7v2h3.586l-8.293 8.293 1.414 1.414L19 6.413v3.586h2v-7Z"
-                        />
-                      </svg>
-                      Invite Would You
-                    </DiscordButton>
-                  )}
-                </DiscordActionRow>
-              </DiscordAttachments>
-            </DiscordMessage>
-          </DiscordMessages>
-        </motion.div>
-      </section>
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          className="mr-2 h-5 w-5"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M10 5V3H5.375A2.377 2.377 0 0 0 3 5.375v13.25A2.377 2.377 0 0 0 5.375 21h13.25A2.376 2.376 0 0 0 21 18.625V14h-2v5H5V5h5Z" />
+                          <path
+                            fill="currentColor"
+                            d="M21 2.999h-7v2h3.586l-8.293 8.293 1.414 1.414L19 6.413v3.586h2v-7Z" />
+                        </svg>
+                        Invite Would You
+                      </DiscordButton>
+                    )}
+                  </DiscordActionRow>
+                </DiscordAttachments>
+              </DiscordMessage>
+            </DiscordMessages>
+          </motion.div>
+        </section>
 
-      <section className="mt-36">
-        <Image
-          src="/LandingWave.svg"
-          alt="Wave"
-          draggable={false}
-          width="10000"
-          height="10000"
-          className="-z-50 w-screen"
-          priority
-        />
-        <div className="bg-[#101010] px-8 pb-12 text-center text-5xl text-white md:-mt-20 md:pb-28 xl:px-[17vw]">
-          <h2>
-            Trusted by{" "}
-            <span className="bg-gradient-brand bg-clip-text font-bold text-transparent">
-              {serverCount.toLocaleString()}+
-            </span>{" "}
-            communities
-          </h2>
-          <h3 className="mt-4 text-2xl">
-            keeping{" "}
-            <span className="bg-gradient-brand bg-clip-text font-bold text-transparent">
-              3,000,000+
-            </span>{" "}
-            users entertained
-          </h3>
+        <section className="mt-36">
+          <Image
+            src="/LandingWave.svg"
+            alt="Wave"
+            draggable={false}
+            width="10000"
+            height="10000"
+            className="-z-50 w-screen"
+            priority />
+          <div className="bg-[#101010] px-8 pb-12 text-center text-5xl text-white md:-mt-20 md:pb-28 xl:px-[17vw]">
+            <h2>
+              Trusted by{" "}
+              <span className="bg-gradient-brand bg-clip-text font-bold text-transparent">
+                {serverCount.toLocaleString()}+
+              </span>{" "}
+              communities
+            </h2>
+            <h3 className="mt-4 text-2xl">
+              keeping{" "}
+              <span className="bg-gradient-brand bg-clip-text font-bold text-transparent">
+                3,000,000+
+              </span>{" "}
+              users entertained
+            </h3>
 
-          <ServerMarquee servers={servers[0]} speed={40} />
-          <ServerMarquee servers={servers[1]} speed={30} direction="right" />
-        </div>
-      </section>
+            <ServerMarquee servers={servers[0]} speed={40} />
+            <ServerMarquee servers={servers[1]} speed={30} direction="right" />
+          </div>
+        </section>
 
-      <section className="mt-20 flex flex-col items-center gap-8 px-9 xl:px-[17vw]">
-        <motion.div
-          initial={{ opacity: 0, transform: "translateY(15px)" }}
-          whileInView={{ opacity: 1, transform: "translateY(0)" }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: "easeInOut" }}
-          className="flex flex-col items-center"
-        >
-          <h2 className="bg-gradient-brand bg-clip-text text-6xl font-bold text-transparent">
-            Features
-          </h2>
-          <h3 className="mt-4 text-center text-2xl text-white">
-            What Does Would You Offer To Your Server?
-          </h3>
-        </motion.div>
+        <section className="mt-20 flex flex-col items-center gap-8 px-9 xl:px-[17vw]">
+          <motion.div
+            initial={{ opacity: 0, transform: "translateY(15px)" }}
+            whileInView={{ opacity: 1, transform: "translateY(0)" }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+            className="flex flex-col items-center"
+          >
+            <h2 className="bg-gradient-brand bg-clip-text text-6xl font-bold text-transparent">
+              Features
+            </h2>
+            <h3 className="mt-4 text-center text-2xl text-white">
+              What Does Would You Offer To Your Server?
+            </h3>
+          </motion.div>
 
-        <FeatureItem
-          reverse
-          right={
-            <DiscordMessages class="min-w-fit overflow-x-hidden rounded-lg shadow">
+          <FeatureItem
+            reverse
+            right={<DiscordMessages class="min-w-fit overflow-x-hidden rounded-lg shadow">
               <DiscordMessage
                 profile="wouldyou"
                 author={profiles.wouldyou.author}
@@ -426,10 +520,8 @@ const Home = () => {
                   </DiscordThreadMessage>
                 </DiscordThread>
               </DiscordMessage>
-            </DiscordMessages>
-          }
-          left={
-            <>
+            </DiscordMessages>}
+            left={<>
               <h4 className="text-center text-3xl font-bold text-white md:text-left">
                 Increase user engagement
               </h4>
@@ -437,13 +529,10 @@ const Home = () => {
                 Keep your community engaged and active with daily &quot;Would
                 You Rather&quot; messages!
               </p>
-            </>
-          }
-        />
+            </>} />
 
-        <FeatureItem
-          left={
-            <>
+          <FeatureItem
+            left={<>
               <h4 className="text-center text-3xl font-bold text-white md:text-left">
                 Entertain your server
               </h4>
@@ -452,10 +541,8 @@ const Home = () => {
                 like Would You Rather, Truth or Dare, Never Have I Ever, Higher
                 or Lower, and What Would You Do!
               </p>
-            </>
-          }
-          right={
-            <DiscordMessages class="overflow-x-hidden rounded-lg shadow">
+            </>}
+            right={<DiscordMessages class="overflow-x-hidden rounded-lg shadow">
               <DiscordMessage
                 profile="wouldyou"
                 author={profiles.wouldyou.author}
@@ -470,8 +557,7 @@ const Home = () => {
                   author={profiles.finn.author}
                   avatar={profiles.finn.avatar}
                   roleColor={profiles.finn.roleColor}
-                  command="/higherlower"
-                />
+                  command="/higherlower" />
                 <DiscordEmbed
                   slot="embeds"
                   color="#57f389"
@@ -573,14 +659,11 @@ const Home = () => {
               >
                 Yep!
               </DiscordMessage>
-            </DiscordMessages>
-          }
-        />
+            </DiscordMessages>} />
 
-        <FeatureItem
-          reverse
-          right={
-            <DiscordMessages class="overflow-x-hidden rounded-lg text-left shadow">
+          <FeatureItem
+            reverse
+            right={<DiscordMessages class="overflow-x-hidden rounded-lg text-left shadow">
               <DiscordMessage
                 profile="wouldyou"
                 author={profiles.wouldyou.author}
@@ -596,8 +679,7 @@ const Home = () => {
                   author={profiles.pod.author}
                   avatar={profiles.pod.avatar}
                   roleColor={profiles.pod.roleColor}
-                  command="/neverhaveiever"
-                />
+                  command="/neverhaveiever" />
                 <DiscordEmbed slot="embeds" color="#1e88e5">
                   <DiscordEmbedDescription slot="description">
                     🎃Never have I ever dressed up as a classic monster (e.g.,
@@ -623,12 +705,10 @@ const Home = () => {
                       >
                         <path
                           fill="#77B255"
-                          d="M36 32a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4a4 4 0 0 1 4-4h28a4 4 0 0 1 4 4v28z"
-                        />
+                          d="M36 32a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4a4 4 0 0 1 4-4h28a4 4 0 0 1 4 4v28z" />
                         <path
                           fill="#FFF"
-                          d="M29.28 6.362a2.502 2.502 0 0 0-3.458.736L14.936 23.877l-5.029-4.65a2.5 2.5 0 1 0-3.394 3.671l7.209 6.666c.48.445 1.09.665 1.696.665.673 0 1.534-.282 2.099-1.139.332-.506 12.5-19.27 12.5-19.27a2.5 2.5 0 0 0-.737-3.458z"
-                        />
+                          d="M29.28 6.362a2.502 2.502 0 0 0-3.458.736L14.936 23.877l-5.029-4.65a2.5 2.5 0 1 0-3.394 3.671l7.209 6.666c.48.445 1.09.665 1.696.665.673 0 1.534-.282 2.099-1.139.332-.506 12.5-19.27 12.5-19.27a2.5 2.5 0 0 0-.737-3.458z" />
                       </svg>
                     </DiscordButton>
                     <DiscordButton type="primary">
@@ -641,8 +721,7 @@ const Home = () => {
                       >
                         <path
                           fill="#DD2E44"
-                          d="M21.533 18.002 33.768 5.768a2.5 2.5 0 0 0-3.535-3.535L17.998 14.467 5.764 2.233a2.498 2.498 0 0 0-3.535 0 2.498 2.498 0 0 0 0 3.535l12.234 12.234L2.201 30.265a2.498 2.498 0 0 0 1.768 4.267c.64 0 1.28-.244 1.768-.732l12.262-12.263 12.234 12.234a2.493 2.493 0 0 0 1.768.732 2.5 2.5 0 0 0 1.768-4.267L21.533 18.002z"
-                        />
+                          d="M21.533 18.002 33.768 5.768a2.5 2.5 0 0 0-3.535-3.535L17.998 14.467 5.764 2.233a2.498 2.498 0 0 0-3.535 0 2.498 2.498 0 0 0 0 3.535l12.234 12.234L2.201 30.265a2.498 2.498 0 0 0 1.768 4.267c.64 0 1.28-.244 1.768-.732l12.262-12.263 12.234 12.234a2.493 2.493 0 0 0 1.768.732 2.5 2.5 0 0 0 1.768-4.267L21.533 18.002z" />
                       </svg>
                     </DiscordButton>
                   </DiscordActionRow>
@@ -656,18 +735,15 @@ const Home = () => {
                       >
                         <path
                           fill="#FFF"
-                          d="M22.242 22.242l2.829 2.829c-3.905 3.905-10.237 3.904-14.143-.001-2.247-2.246-3.194-5.296-2.854-8.225l-4.037.367c-.215 3.84 1.128 7.752 4.062 10.687 5.467 5.467 14.333 5.468 19.799 0l2.828 2.828.849-9.334-9.333.849zM27.899 8.1C22.431 2.633 13.568 2.633 8.1 8.1L5.272 5.272l-.849 9.334 9.334-.849-2.829-2.829c3.906-3.905 10.236-3.905 14.142 0 2.248 2.247 3.194 5.297 2.856 8.226l4.036-.366c.216-3.841-1.128-7.753-4.063-10.688z"
-                        />
+                          d="M22.242 22.242l2.829 2.829c-3.905 3.905-10.237 3.904-14.143-.001-2.247-2.246-3.194-5.296-2.854-8.225l-4.037.367c-.215 3.84 1.128 7.752 4.062 10.687 5.467 5.467 14.333 5.468 19.799 0l2.828 2.828.849-9.334-9.333.849zM27.899 8.1C22.431 2.633 13.568 2.633 8.1 8.1L5.272 5.272l-.849 9.334 9.334-.849-2.829-2.829c3.906-3.905 10.236-3.905 14.142 0 2.248 2.247 3.194 5.297 2.856 8.226l4.036-.366c.216-3.841-1.128-7.753-4.063-10.688z" />
                       </svg>
                       New Question
                     </DiscordButton>
                   </DiscordActionRow>
                 </DiscordAttachments>
               </DiscordMessage>
-            </DiscordMessages>
-          }
-          left={
-            <>
+            </DiscordMessages>}
+            left={<>
               <h4 className="text-center text-3xl font-bold text-white md:text-left">
                 Upgrade your server
               </h4>
@@ -675,46 +751,44 @@ const Home = () => {
                 Upgrade your server with Would You, featuring a wide variety of
                 games and customized questions.
               </p>
-            </>
-          }
-        />
-      </section>
+            </>} />
+        </section>
 
-      <section className="mt-36 bg-[#101010] px-9 py-12 xl:px-[17vw]">
-        <motion.h2
-          initial={{ opacity: 0, transform: "translateY(10px)" }}
-          whileInView={{ opacity: 1, transform: "translateY(0)" }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.65, ease: "easeInOut" }}
-          className="text-center text-5xl font-bold leading-normal text-white"
-        >
-          Keep Your Server Active with{" "}
-          <span className="bg-gradient-brand bg-clip-text font-bold text-transparent">
-            Would You
-          </span>
-        </motion.h2>
-        <motion.h3
-          initial={{ opacity: 0, transform: "translateY(10px)" }}
-          whileInView={{ opacity: 1, transform: "translateY(0)" }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.65, ease: "easeInOut" }}
-          className="mt-4 text-center text-xl text-neutral-300"
-        >
-          Invite To Your Server Now!
-        </motion.h3>
-        <motion.div
-          initial={{ opacity: 0, transform: "translateY(-20px)" }}
-          whileInView={{ opacity: 1, transform: "translateY(0)" }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.65, ease: "easeInOut" }}
-          className="mt-8 flex justify-center"
-        >
-          <Link href="/invite" target="_blank">
-            <Button>Invite</Button>
-          </Link>
-        </motion.div>
-      </section>
-    </main>
+        <section className="mt-36 bg-[#101010] px-9 py-12 xl:px-[17vw]">
+          <motion.h2
+            initial={{ opacity: 0, transform: "translateY(10px)" }}
+            whileInView={{ opacity: 1, transform: "translateY(0)" }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.65, ease: "easeInOut" }}
+            className="text-center text-5xl font-bold leading-normal text-white"
+          >
+            Keep Your Server Active with{" "}
+            <span className="bg-gradient-brand bg-clip-text font-bold text-transparent">
+              Would You
+            </span>
+          </motion.h2>
+          <motion.h3
+            initial={{ opacity: 0, transform: "translateY(10px)" }}
+            whileInView={{ opacity: 1, transform: "translateY(0)" }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.65, ease: "easeInOut" }}
+            className="mt-4 text-center text-xl text-neutral-300"
+          >
+            Invite To Your Server Now!
+          </motion.h3>
+          <motion.div
+            initial={{ opacity: 0, transform: "translateY(-20px)" }}
+            whileInView={{ opacity: 1, transform: "translateY(0)" }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.65, ease: "easeInOut" }}
+            className="mt-8 flex justify-center"
+          >
+            <Link href="/invite" target="_blank">
+              <Button>Invite</Button>
+            </Link>
+          </motion.div>
+        </section>
+      </main></>
   );
 };
 
