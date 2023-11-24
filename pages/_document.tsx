@@ -1,15 +1,14 @@
 import { Head, Html, Main, NextScript } from "next/document";
-import Script from "next/script";
 
 export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <Script
+        <script
           defer
           data-domain="wouldyoubot.gg"
           src="https://stats.wouldyoubot.gg/js/script.js"
-        ></Script>
+        ></script>
         <meta name="robots" content="index, follow" />
         <meta
           name="description"
