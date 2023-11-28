@@ -9,7 +9,7 @@ import React, { useEffect, useState } from "react";
 import servers from "../data/servers.json";
 import dynamic from "next/dynamic";
 
-const MainDiscordEmbed = dynamic(() => import('@/components/Embeds/MainDiscordEmbed'), { ssr: false })
+const MainDiscordEmbed = dynamic(() => import('@/components/Embeds/MainDiscordEmbed'), { ssr: true })
 const DailyMessageEmbed = dynamic(() => import('@/components/Embeds/DailyMessageEmbed'), { ssr: false })
 const HigherLowerEmbed = dynamic(() => import('@/components/Embeds/HigherLowerEmbed'), { ssr: false })
 const NeverHaveIEverEmbed = dynamic(() => import('@/components/Embeds/NeverHaveIEverEmbed'), { ssr: false })
@@ -317,7 +317,7 @@ const Home = () => {
 
           <FeatureItem
             reverse
-            right={<NeverHaveIEverEmbed replayedRounds={replayedRounds} />}
+            right={<NeverHaveIEverEmbed replayedRounds={0} />}
             left={<>
               <h4 className="text-center text-3xl font-bold text-white md:text-left">
                 Upgrade your server
