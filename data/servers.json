@@ -49,6 +49,22 @@
       "invite": "https://discord.gg/draw"
     },
     {
+      "name": "ПостДис",
+      "members": "1k+",
+      "avatar": "ПостДис.gif",
+      "partnered": false,
+      "verified": true,
+      "invite": "https://discord.gg/nkVmeudN"
+    },
+    {
+      "name": "TVG",
+      "members": "700+",
+      "avatar": "tvg.webp",
+      "partnered": false,
+      "verified": true,
+      "invite": "https://discord.gg/tvg"
+    },
+    {
       "name": "Hypixel Skyblock Hyperfy",
       "members": "4.2k+",
       "avatar": "hyperfy.gif",
@@ -123,6 +139,14 @@
       "invite": "https://discord.gg/doors"
     },
     {
+      "name": "DeadP47 GAYming",
+      "members": "16k+",
+      "avatar": "DeadP47.webp",
+      "partnered": false,
+      "verified": true,
+      "invite": "https://discord.gg/deadp47"
+    },
+    {
       "name": "KIWIKARIU",
       "members": "3k+",
       "avatar": "KIWIKARIU.gif",
@@ -137,6 +161,14 @@
       "partnered": true,
       "verified": false,
       "invite": "https://discord.gg/hoboslayers"
+    },
+    {
+      "name": "Sebee",
+      "members": "85K+",
+      "avatar": "Sebee.webp",
+      "partnered": true,
+      "verified": true,
+      "invite": "https://discord.gg/sebee"
     },
     {
       "name": "Cozy Campfire",
