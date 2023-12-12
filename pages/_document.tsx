@@ -21,8 +21,8 @@ export default function Document() {
         <meta property="og:title" content="Would You | The Discord Bot" />
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:image" content="0" />
-        <meta name="theme-color" content="#0598F6" />
-        <meta name="msapplication-TileColor" content="#0598F6" />
+        <meta name="theme-color" content="#378B29" />
+        <meta name="msapplication-TileColor" content="#378B29" />
       </Head>
       <body>
         <Main />

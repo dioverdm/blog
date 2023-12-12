@@ -4,6 +4,7 @@ import "@/styles/globals.css";
 import "@/styles/index.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import Snowfall from 'react-snowfall';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -26,12 +27,17 @@ export default function App({ Component, pageProps }: AppProps) {
             <meta
               key="og:image"
               property="og:image"
-              content="https://i.imgur.com/OPQaiVa.png"
+              content="https://i.imgur.com/mtci9pz.png"
             />
           </>
         )}
       </Head>
       <div className="flex min-h-screen flex-col">
+        <Snowfall snowflakeCount={45} style={{
+    position: 'fixed',
+    width: '100vw',
+    height: '100vh',
+  }} />
         <Navbar />
         <div className="grow">
           <Component {...pageProps} />
