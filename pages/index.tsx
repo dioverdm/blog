@@ -120,7 +120,8 @@ const Home = () => {
               "sameAs":[
                  "https://twitter.com/wouldyoubot",
                  "https://www.youtube.com/@wouldyoubot",
-                 "https://top.gg/bot/981649513427111957"
+                 "https://top.gg/bot/981649513427111957",
+                 "https://wumpus.store/bot/981649513427111957"
               ],
               "offers":{
                 "@type":"Offer",
