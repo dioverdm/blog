@@ -16,18 +16,20 @@ interface MainProps {
   replayedRounds: number;
   currentQuestion: string;
   replay: Function;
+  disableAnimation?: boolean;
 }
 
 const MainDiscordEmbed: React.FC<MainProps> = ({
   replayedRounds,
   currentQuestion,
   replay,
+  disableAnimation,
 }) => {
   return (
     <motion.div
       initial={{ opacity: 0, transform: "translateY(20px)" }}
       whileInView={{ opacity: 1, transform: "translateY(0)" }}
-      transition={{ duration: 0.7, ease: "easeInOut" }}
+      transition={{ duration: disableAnimation ? 0 : 0.7, ease: "easeInOut" }}
       viewport={{ once: true }}
       style={{ width: "90%", marginLeft: "auto", marginRight: "auto" }}
     >

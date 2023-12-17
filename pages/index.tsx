@@ -8,6 +8,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import servers from "../data/servers.json";
 import dynamic from "next/dynamic";
+import { useSearchParams } from "next/navigation";
 
 const MainDiscordEmbed = dynamic(
   () => import("@/components/Embeds/MainDiscordEmbed"),
@@ -45,13 +46,14 @@ const FeatureItem: React.FC<{
   left: React.ReactNode;
   right: React.ReactNode;
   reverse?: true;
-}> = ({ left, right, reverse }) => (
+  disableAnimation?: boolean;
+}> = ({ left, right, reverse, disableAnimation }) => (
   <div className="maindiv flex flex-col justify-between gap-20 md:flex-row">
     <motion.div
       initial={{ opacity: 0, transform: "translateX(-50px)" }}
       whileInView={{ opacity: 1, transform: "translateX(0)" }}
       viewport={{ once: true }}
-      transition={{ duration: 0.65, ease: "easeInOut" }}
+      transition={{ duration: disableAnimation ? 0 : 0.65, ease: "easeInOut" }}
       className="flex flex-col justify-center gap-2"
     >
       {left}
@@ -60,7 +62,7 @@ const FeatureItem: React.FC<{
       initial={{ opacity: 0, transform: "translateX(50px)" }}
       whileInView={{ opacity: 1, transform: "translateX(0)" }}
       viewport={{ once: true }}
-      transition={{ duration: 0.65, ease: "easeInOut" }}
+      transition={{ duration: disableAnimation ? 0 : 0.65, ease: "easeInOut" }}
       className={`flex flex-col justify-center gap-2 ${
         reverse ? "order-last md:order-first" : ""
       }`}
@@ -101,6 +103,9 @@ const Home = () => {
       setReplayedRounds(replayedRounds + 1);
     }
   };
+
+  const search = useSearchParams();
+  const iframe = search.get("iframe") !== null;
 
   return (
     <>
@@ -214,9 +219,12 @@ const Home = () => {
       <main className="mt-48 overflow-x-hidden text-neutral-300">
         <section className="flex flex-col items-center justify-between gap-8 text-center lg:flex-row lg:text-left xl:px-[17vw]">
           <motion.div
-            initial={{ opacity: 0, transform: "translateY(20px)" }}
+            initial={{
+              opacity: 0,
+              transform: "translateY(20px)",
+            }}
             whileInView={{ opacity: 1, transform: "translateY(0)" }}
-            transition={{ duration: 0.7, ease: "easeInOut" }}
+            transition={{ duration: iframe ? 0 : 1, ease: "easeInOut" }}
             viewport={{ once: true }}
             className="px-8"
           >
@@ -258,6 +266,7 @@ const Home = () => {
             replayedRounds={replayedRounds}
             currentQuestion={currentQuestion}
             replay={replay}
+            disableAnimation={iframe}
           />
         </section>
 
@@ -297,7 +306,7 @@ const Home = () => {
             initial={{ opacity: 0, transform: "translateY(15px)" }}
             whileInView={{ opacity: 1, transform: "translateY(0)" }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeInOut" }}
+            transition={{ duration: iframe ? 0 : 0.6, ease: "easeInOut" }}
             className="flex flex-col items-center"
           >
             <h2 className="bg-gradient-brand bg-clip-text text-6xl font-bold text-transparent">
@@ -310,6 +319,7 @@ const Home = () => {
 
           <FeatureItem
             reverse
+            disableAnimation={iframe}
             right={<DailyMessageEmbed threadName={threadName} />}
             left={
               <>
@@ -325,6 +335,7 @@ const Home = () => {
           />
 
           <FeatureItem
+            disableAnimation={iframe}
             left={
               <>
                 <h4 className="text-center text-3xl font-bold text-white md:text-left">
@@ -342,6 +353,7 @@ const Home = () => {
 
           <FeatureItem
             reverse
+            disableAnimation={iframe}
             right={<NeverHaveIEverEmbed replayedRounds={0} />}
             left={
               <>
@@ -362,7 +374,7 @@ const Home = () => {
             initial={{ opacity: 0, transform: "translateY(10px)" }}
             whileInView={{ opacity: 1, transform: "translateY(0)" }}
             viewport={{ once: true }}
-            transition={{ duration: 0.65, ease: "easeInOut" }}
+            transition={{ duration: iframe ? 0 : 0.65, ease: "easeInOut" }}
             className="text-center text-5xl font-bold leading-normal text-white"
           >
             Keep Your Server Active with{" "}
@@ -374,7 +386,7 @@ const Home = () => {
             initial={{ opacity: 0, transform: "translateY(10px)" }}
             whileInView={{ opacity: 1, transform: "translateY(0)" }}
             viewport={{ once: true }}
-            transition={{ duration: 0.65, ease: "easeInOut" }}
+            transition={{ duration: iframe ? 0 : 0.65, ease: "easeInOut" }}
             className="mt-4 text-center text-xl text-neutral-300"
           >
             Invite To Your Server Now!
@@ -383,7 +395,7 @@ const Home = () => {
             initial={{ opacity: 0, transform: "translateY(-20px)" }}
             whileInView={{ opacity: 1, transform: "translateY(0)" }}
             viewport={{ once: true }}
-            transition={{ duration: 0.65, ease: "easeInOut" }}
+            transition={{ duration: iframe ? 0 : 0.65, ease: "easeInOut" }}
             className="mt-8 flex justify-center"
           >
             <Link href="/invite" target="_blank">
