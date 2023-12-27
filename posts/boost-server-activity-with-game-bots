@@ -1,0 +1,39 @@
+---
+title: Boost Server Activity with Game Bots
+description: Take a look into boosting your server's activity through free to use game bots!
+date: December 28st, 2023
+seoDate: "2023-12-28"
+thumbnail:
+  large: /LogoBig.png
+  banner: /LogoBig.png
+author:
+  name: NightKiller_2
+  avatar: /staff/Nightkiller.webp
+tags: [discord]
+pinned: false
+---
+
+## Large Heading
+
+### Small Heading
+
+General Text
+
+**Bold Text**
+
+_Italic Text_
+
+[Link](https://google.com)
+
+- This is a list
+- This is another list item
+
+1. This is a numbered list
+2. This is another numbered list item
+
+
+<br />
+
+<Button variant="red">Button</Button>
+
+![Image](/logos/wouldyou.webp)
