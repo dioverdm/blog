@@ -282,7 +282,7 @@ const Home = () => {
             <h3 className="mt-4 text-2xl">
               keeping{" "}
               <span className="bg-gradient-brand bg-clip-text font-bold text-transparent">
-                3,000,000+
+                4,000,000+
               </span>{" "}
               users entertained
             </h3>

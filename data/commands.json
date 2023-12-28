@@ -37,6 +37,12 @@
     "options": ["Deutsch", "English", "Espanol", "Français"]
   },
   {
+    "name": "leaderboard",
+    "description": "Displays the leaderboard for a game",
+    "usage": "/leaderboard <game> <for>",
+    "options": ["Higher or Lower", "Global", "Local"]
+  },
+  {
     "name": "neverhaveiever",
     "description": "Get a never have I ever message",
     "usage": "/neverhaveiever"
