@@ -1,8 +1,8 @@
 ---
 title: How to Boost Server Activity with Would You
 description: Learn how to boost your server's activity with Would You!
-date: December 28th, 2023
-seoDate: "2023-12-28"
+date: January 3rd, 2024
+seoDate: "2024-1-03"
 thumbnail:
   large: /LogoBig.png
 author:
@@ -21,10 +21,10 @@ Has your Discord server been feeling a bit too quiet lately? Join us as we take 
 To initiate this engaging game, simply use `/truth` or `/dare` and interact with the embedded buttons to continue playing. This game also features a random button for those moments when you can't decide an option, or wish to add a touch of excitement!
 ### 2. Higher or Lower
 ![overview pic]()
-Higher or Lower presents an engaging solo challenge, urging users to guess the popularity of two nouns (Person/Place/Thing). With a simple interface, users can compete for the highest score with ease.
+Higher or Lower presents an engaging solo challenge, with members guessing the popularity of two nouns (Person/Place/Thing). With a simple interface, members can compete for the highest score with ease.
 ### 3. Never Have I Ever
 ![overview pic]()
-This minigame offers members a chance to discover more about each other while keeping the atmosphere light-hearted and entertaining. Similar to our other minigames, users can interact with the embedded content, eliminating the need to repeatedly run commands and sustaining the enjoyment.
+This minigame offers members a chance to discover more about each other while keeping the atmosphere light-hearted and entertaining. Similar to our other minigames, members can interact with the embedded content, eliminating the need to repeatedly run commands and sustaining the enjoyment.
 ### 4. Would You Rather
 ![overview pic]()
 Would You Rather stands as one of our most popular and staple minigames. With an ever expanding set of questions, WYR promises a delightful and engaging experience for all participants. Members can also view the results for each question, comparing their opinions with others.
@@ -33,6 +33,9 @@ Would You Rather stands as one of our most popular and staple minigames. With an
 Similar to Never Have I Ever but with a twist, What Would You Do provides prompts that invite members to discuss and share their unique approaches to different situations. Like our other minigames, after running the `/wwyd` command, members can seamlessly continue the fun directly from the embedded content.
 
 ### Can I Run Events With Would You?
+The short answer is yes. 'Would You' offers the ability to host both simple and complex events. Games like 'Truth or Dare,' 'What Would You Do,' and 'Never Have I Ever' provide more laid-back and easy-to-participate options for your members. Invite your members to participate and get to know each other in a fun and interactive way.
 
+On the other hand, games like 'Higher or Lower' and 'Would You Rather' offer more competitive and complex events. 'Higher or Lower' is now tracked through our '/leaderboard' command, allowing members to compete for the top spot not only within your own server but also globally for the bot.
 
-### Takeaways
+### Conclusion
+Would You offers an exciting array of Discord minigames, such as Truth or Dare, Higher or Lower, Never Have I Ever, Would You Rather, and What Would You Do. These games can help provide an excellent opportunity to boost activity and engagement within your Discord community, without any complex setup. Whether you're aiming for lighthearted fun or competitive challenges, 'Would You' has you covered, making it the perfect addition to enhance interaction and entertainment within your server. 
