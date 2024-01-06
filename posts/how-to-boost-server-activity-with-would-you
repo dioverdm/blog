@@ -1,8 +1,8 @@
 ---
 title: How to Boost Server Activity with Would You
 description: Learn how to boost your server's activity with Would You!
-date: January 3rd, 2024
-seoDate: "2024-1-03"
+date: January 6th, 2024
+seoDate: "2024-1-06"
 thumbnail:
   large: /LogoBig.png
 author:
@@ -17,23 +17,28 @@ Has your Discord server been feeling a bit too quiet lately? Join us as we take 
 
 ## Minigames
 ### 1. Truth or Dare
-![overview pic]()
-To initiate this engaging game, simply use `/truth` or `/dare` and interact with the embedded buttons to continue playing. This game also features a random button for those moments when you can't decide an option, or wish to add a touch of excitement!
+![overview pic](/posts/Images/Activity/td-preview.png) 
+
+To start a game, simply use `/truth` or `/dare` and interact with the embedded buttons to continue playing. This game also features a random button for those moments when you can't decide an option, or wish to add a touch of excitement!
 ### 2. Higher or Lower
-![overview pic]()
-Higher or Lower presents an engaging solo challenge, with members guessing the popularity of two nouns (Person/Place/Thing). With a simple interface, members can compete for the highest score with ease.
+![overview pic](/posts/Images/Activity/Hl-preview.png)
+
+Higher or Lower is an engaging solo game, with members guessing the popularity of two nouns (Person/Place/Thing). Additionally, the `/leaderboard` command allows for members to compete for the top position in your server.
 ### 3. Never Have I Ever
-![overview pic]()
+![overview pic](/posts/Images/Activity/nhIe-preview.png)
+
 This minigame offers members a chance to discover more about each other while keeping the atmosphere light-hearted and entertaining. Similar to our other minigames, members can interact with the embedded content, eliminating the need to repeatedly run commands and sustaining the enjoyment.
 ### 4. Would You Rather
-![overview pic]()
-Would You Rather stands as one of our most popular and staple minigames. With an ever expanding set of questions, WYR promises a delightful and engaging experience for all participants. Members can also view the results for each question, comparing their opinions with others.
+![overview pic](/posts/Images/Activity/wyr-preview.png)
+
+Would You Rather stands as one of our most popular and staple minigames. With an ever expanding set of questions, WYR promises an engaging experience for all participants. Members can also view the results for each question, comparing their opinions with others.
 ### 5. What Would You Do?
-![overview pic]()
-Similar to Never Have I Ever but with a twist, What Would You Do provides prompts that invite members to discuss and share their unique approaches to different situations. Like our other minigames, after running the `/wwyd` command, members can seamlessly continue the fun directly from the embedded content.
+![overview pic](/posts/Images/Activity/wyyd-preview.png)
+
+Similar to Never Have I Ever, but with a twist. What Would You Do provides prompts that invite members to discuss and share their unique approaches to different situations. Like our other minigames, after running the `/wwyd` command, members can seamlessly continue the fun directly from the embedded content.
 
 ### Can I Run Events With Would You?
-The short answer is yes. Would You offers the ability to host both simple and complex events. Games like Truth or Dare, What Would You Do, and Never Have I Ever provide more laid-back and easy-to-participate options for your members. Invite your members to participate and get to know each other in a fun and interactive way.
+The short answer is yes. Would You offers the ability to host both simple and complex events. Games like Truth or Dare, What Would You Do, and Never Have I Ever provide more easy-to-participate options for your members.
 
 On the other hand, games like Higher or Lower and Would You Rather offer more competitive and complex events. Higher or Lower is now tracked through our `/leaderboard` command, allowing members to compete for the top spot not only within your own server but also globally for the bot.
 
