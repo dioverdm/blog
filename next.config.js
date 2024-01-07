@@ -4,9 +4,6 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  compiler: {
-    removeConsole: true,
-  },
 
   images: {
     remotePatterns: [      {
