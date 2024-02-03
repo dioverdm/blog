@@ -97,8 +97,8 @@ const Navbar = () => {
           </div>
         </div>
         <div className="z-50 mr-8 flex items-center xl:mr-[17vw]">
-          <Link href="/discord" target="_blank" className="hidden md:block">
-            <Button className="">Support</Button>
+          <Link href="/invite" target="_blank" className="hidden md:block">
+            <Button className="">Invite</Button>
           </Link>
           <div
             className="relative ml-6 flex h-6 w-8 flex-col items-center justify-between md:hidden"
@@ -159,11 +159,11 @@ const Navbar = () => {
               Vote
             </Link>
             <Link
-              href="/discord"
+              href="/invite"
               target="_blank"
               className="mt-8 text-center text-2xl"
             >
-              <Button>Support</Button>
+              <Button>Invite</Button>
             </Link>
           </div>
         </motion.div>
