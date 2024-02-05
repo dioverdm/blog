@@ -90,7 +90,7 @@ const Footer = () => {
           </div>
           <div className="flex w-full flex-col items-center md:items-start">
             <h4 className="mb-2 text-lg font-bold text-white">Recommended</h4>
-            <div className="flex flex-col items-center gap-1 md:items-start">
+            <div className="flex flex-col items-center gap-2 md:items-start">
               {recommendedLinks.map((link) => (
                 <Link
                   key={link.name}
@@ -105,7 +105,7 @@ const Footer = () => {
           </div>
           <div className="flex w-full flex-col items-center md:items-start">
             <h4 className="mb-2 text-lg font-bold text-white">Links</h4>
-            <div className="flex flex-col items-center gap-1 md:items-start">
+            <div className="flex flex-col items-center gap-2 md:items-start">
               {Links.map((link) => (
                 <Link
                   key={link.name}
@@ -120,7 +120,7 @@ const Footer = () => {
           </div>
           <div className="flex w-full flex-col items-center md:items-start">
             <h4 className="mb-2 text-lg font-bold text-white">Legal</h4>
-            <div className="flex flex-col items-center gap-1 md:items-start">
+            <div className="flex flex-col items-center gap-2 md:items-start">
               {LegalLinks.map((link) => (
                 <Link
                   key={link.name}
