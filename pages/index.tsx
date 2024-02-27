@@ -1,8 +1,9 @@
 import Button from "@/components/Button";
 import ServerMarquee from "@/components/ServerMarquee";
 import Head from "next/head";
+import FeatureItem from "@/components/FeatureItem";
 
-import { motion } from "framer-motion";
+import { m, LazyMotion, domAnimation } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
@@ -40,35 +41,6 @@ const questions = [
 
 const getRandomQuestion = () =>
   questions[Math.floor(Math.random() * questions.length)];
-
-const FeatureItem: React.FC<{
-  left: React.ReactNode;
-  right: React.ReactNode;
-  reverse?: true;
-}> = ({ left, right, reverse }) => (
-  <div className="maindiv flex flex-col justify-between gap-20 md:flex-row">
-    <motion.div
-      initial={{ opacity: 0, transform: "translateX(-50px)" }}
-      whileInView={{ opacity: 1, transform: "translateX(0)" }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.65, ease: "easeInOut" }}
-      className="flex flex-col justify-center gap-2"
-    >
-      {left}
-    </motion.div>
-    <motion.div
-      initial={{ opacity: 0, transform: "translateX(50px)" }}
-      whileInView={{ opacity: 1, transform: "translateX(0)" }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.65, ease: "easeInOut" }}
-      className={`flex flex-col justify-center gap-2 ${
-        reverse ? "order-last md:order-first" : ""
-      }`}
-    >
-      {right}
-    </motion.div>
-  </div>
-);
 
 const Home = () => {
   const currentDate = new Date().toLocaleString();
@@ -212,8 +184,9 @@ const Home = () => {
         ></script>
       </Head>
       <main className="mt-48 overflow-x-hidden text-neutral-300">
+      <LazyMotion features={domAnimation}>
         <section className="flex flex-col items-center justify-between gap-8 text-center lg:flex-row lg:text-left xl:px-[17vw]">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, transform: "translateY(20px)" }}
             whileInView={{ opacity: 1, transform: "translateY(0)" }}
             transition={{ duration: 0.7, ease: "easeInOut" }}
@@ -253,7 +226,7 @@ const Home = () => {
                 </svg>
               </Button>
             </Link>
-          </motion.div>
+          </m.div>
           <MainDiscordEmbed
             replayedRounds={replayedRounds}
             currentQuestion={currentQuestion}
@@ -293,7 +266,7 @@ const Home = () => {
         </section>
 
         <section className="mt-20 flex flex-col items-center gap-8 px-9 xl:px-[17vw]">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, transform: "translateY(15px)" }}
             whileInView={{ opacity: 1, transform: "translateY(0)" }}
             viewport={{ once: true }}
@@ -306,7 +279,7 @@ const Home = () => {
             <h3 className="mt-4 text-center text-2xl text-white">
               What Does Would You Offer To Your Server?
             </h3>
-          </motion.div>
+          </m.div>
 
           <FeatureItem
             reverse
@@ -358,7 +331,7 @@ const Home = () => {
         </section>
 
         <section className="mt-36 bg-[#101010] px-9 py-12 xl:px-[17vw]">
-          <motion.h2
+          <m.h2
             initial={{ opacity: 0, transform: "translateY(10px)" }}
             whileInView={{ opacity: 1, transform: "translateY(0)" }}
             viewport={{ once: true }}
@@ -369,8 +342,8 @@ const Home = () => {
             <span className="bg-gradient-brand bg-clip-text font-bold text-transparent">
               Would You
             </span>
-          </motion.h2>
-          <motion.h3
+          </m.h2>
+          <m.h3
             initial={{ opacity: 0, transform: "translateY(10px)" }}
             whileInView={{ opacity: 1, transform: "translateY(0)" }}
             viewport={{ once: true }}
@@ -378,8 +351,8 @@ const Home = () => {
             className="mt-4 text-center text-xl text-neutral-300"
           >
             Invite To Your Server Now!
-          </motion.h3>
-          <motion.div
+          </m.h3>
+          <m.div
             initial={{ opacity: 0, transform: "translateY(-20px)" }}
             whileInView={{ opacity: 1, transform: "translateY(0)" }}
             viewport={{ once: true }}
@@ -389,8 +362,9 @@ const Home = () => {
             <Link href="/invite" target="_blank">
               <Button>Invite</Button>
             </Link>
-          </motion.div>
+          </m.div>
         </section>
+        </LazyMotion>
       </main>
     </>
   );

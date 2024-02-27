@@ -1,4 +1,4 @@
-import { motion, useAnimationControls } from "framer-motion";
+import { m, useAnimationControls, LazyMotion, domAnimation } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -104,25 +104,27 @@ const Navbar = () => {
             className="relative ml-6 flex h-6 w-8 flex-col items-center justify-between md:hidden"
             onClick={() => toggleMobileMenu()}
           >
-            <motion.span
+            <LazyMotion features={domAnimation}>
+            <m.span
               className="h-[3px] w-[30px] origin-left rounded-full bg-neutral-300"
               initial={{ rotate: "0deg" }}
               animate={lineOneControls}
             />
-            <motion.span
+            <m.span
               className="menu-line line-1 h-[3px] w-[30px] rounded-full bg-neutral-300"
               initial={{ opacity: 1 }}
               animate={lineTwoControls}
             />
-            <motion.span
+            <m.span
               className="menu-line line-1 h-[3px] w-[30px] origin-left rounded-full bg-neutral-300"
               initial={{ rotate: "0deg" }}
               animate={lineThreeControls}
             />
+            </LazyMotion>
           </div>
         </div>
-
-        <motion.div
+        <LazyMotion features={domAnimation}>
+        <m.div
           className="fixed left-0 top-0 z-40 h-[100vh] w-[100vw] bg-neutral-900"
           transition={{ duration: 0.21, type: "easeInOut" }}
           initial={{ opacity: 0.5, left: "100vw", pointerEvents: "none" }}
@@ -166,7 +168,8 @@ const Navbar = () => {
               <Button>Invite</Button>
             </Link>
           </div>
-        </motion.div>
+        </m.div>
+        </LazyMotion>
       </nav>
     )
   );
