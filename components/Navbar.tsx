@@ -1,4 +1,9 @@
-import { m, useAnimationControls, LazyMotion, domAnimation } from "framer-motion";
+import {
+  m,
+  useAnimationControls,
+  LazyMotion,
+  domAnimation,
+} from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -105,70 +110,70 @@ const Navbar = () => {
             onClick={() => toggleMobileMenu()}
           >
             <LazyMotion features={domAnimation}>
-            <m.span
-              className="h-[3px] w-[30px] origin-left rounded-full bg-neutral-300"
-              initial={{ rotate: "0deg" }}
-              animate={lineOneControls}
-            />
-            <m.span
-              className="menu-line line-1 h-[3px] w-[30px] rounded-full bg-neutral-300"
-              initial={{ opacity: 1 }}
-              animate={lineTwoControls}
-            />
-            <m.span
-              className="menu-line line-1 h-[3px] w-[30px] origin-left rounded-full bg-neutral-300"
-              initial={{ rotate: "0deg" }}
-              animate={lineThreeControls}
-            />
+              <m.span
+                className="h-[3px] w-[30px] origin-left rounded-full bg-neutral-300"
+                initial={{ rotate: "0deg" }}
+                animate={lineOneControls}
+              />
+              <m.span
+                className="menu-line line-1 h-[3px] w-[30px] rounded-full bg-neutral-300"
+                initial={{ opacity: 1 }}
+                animate={lineTwoControls}
+              />
+              <m.span
+                className="menu-line line-1 h-[3px] w-[30px] origin-left rounded-full bg-neutral-300"
+                initial={{ rotate: "0deg" }}
+                animate={lineThreeControls}
+              />
             </LazyMotion>
           </div>
         </div>
         <LazyMotion features={domAnimation}>
-        <m.div
-          className="fixed left-0 top-0 z-40 h-[100vh] w-[100vw] bg-neutral-900"
-          transition={{ duration: 0.21, type: "easeInOut" }}
-          initial={{ opacity: 0.5, left: "100vw", pointerEvents: "none" }}
-          animate={menuControls}
-        >
-          <div className="absolute top-36 flex w-full flex-col items-center">
-            <Link
-              href="/"
-              className="mt-8 text-center text-3xl text-white"
-              onClick={() => toggleMobileMenu()}
-            >
-              Home
-            </Link>
-            <Link
-              href="/commands"
-              className="mt-8 text-center text-3xl text-white"
-              onClick={() => toggleMobileMenu()}
-            >
-              Commands
-            </Link>
-            <Link
-              href="/blog"
-              className="mt-8 text-center text-3xl text-white"
-              onClick={() => toggleMobileMenu()}
-            >
-              Blog
-            </Link>
-            <Link
-              href="/vote"
-              target="_blank"
-              className="mt-8 text-center text-3xl text-white"
-              onClick={() => toggleMobileMenu()}
-            >
-              Vote
-            </Link>
-            <Link
-              href="/invite"
-              target="_blank"
-              className="mt-8 text-center text-2xl"
-            >
-              <Button>Invite</Button>
-            </Link>
-          </div>
-        </m.div>
+          <m.div
+            className="fixed left-0 top-0 z-40 h-[100vh] w-[100vw] bg-neutral-900"
+            transition={{ duration: 0.21, type: "easeInOut" }}
+            initial={{ opacity: 0.5, left: "100vw", pointerEvents: "none" }}
+            animate={menuControls}
+          >
+            <div className="absolute top-36 flex w-full flex-col items-center">
+              <Link
+                href="/"
+                className="mt-8 text-center text-3xl text-white"
+                onClick={() => toggleMobileMenu()}
+              >
+                Home
+              </Link>
+              <Link
+                href="/commands"
+                className="mt-8 text-center text-3xl text-white"
+                onClick={() => toggleMobileMenu()}
+              >
+                Commands
+              </Link>
+              <Link
+                href="/blog"
+                className="mt-8 text-center text-3xl text-white"
+                onClick={() => toggleMobileMenu()}
+              >
+                Blog
+              </Link>
+              <Link
+                href="/vote"
+                target="_blank"
+                className="mt-8 text-center text-3xl text-white"
+                onClick={() => toggleMobileMenu()}
+              >
+                Vote
+              </Link>
+              <Link
+                href="/invite"
+                target="_blank"
+                className="mt-8 text-center text-2xl"
+              >
+                <Button>Invite</Button>
+              </Link>
+            </div>
+          </m.div>
         </LazyMotion>
       </nav>
     )
