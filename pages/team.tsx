@@ -51,12 +51,12 @@ export default function Team() {
       </Head>
       <main className="px-8 xl:px-[17vw]">
         <h1 className="mt-36 text-4xl font-bold text-white">
-          <span className="text-brand-red-100 drop-shadow-red-glow">
-            Meet </span>{" "}
-
-            <span className="text-brand-blue-100 drop-shadow-blue-glow"> the </span>
-        
-            Team
+          <span className="text-brand-red-100 drop-shadow-red-glow">Meet </span>{" "}
+          <span className="text-brand-blue-100 drop-shadow-blue-glow">
+            {" "}
+            the{" "}
+          </span>
+          Team
         </h1>
         <p className="text-neutral-500">
           Meet the amazing team and contributors behind Would You.
