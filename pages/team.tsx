@@ -5,7 +5,6 @@ import Image from "next/image"; // Import the 'Image' component
 import staffs from "../data/staffs.json"; // Import the JSON data
 
 export default function Team() {
-  
   const roles = [
     "Developers",
     "Admins",

@@ -143,10 +143,7 @@ const Footer = () => {
           <hr className="border border-neutral-800" />
           <p className="mt-8 text-center text-sm text-neutral-300">
             Made with <span className="text-brand-red-100">♥</span> by{" "}
-            <Link
-              href="/team"
-              className="text-white underline"
-            >
+            <Link href="/team" className="text-white underline">
               Would You Team
             </Link>{" "}
             &{" "}
