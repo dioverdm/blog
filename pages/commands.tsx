@@ -7,6 +7,12 @@ export default function Commands() {
   const [isHovered, setIsHovered] = useState(false);
   const [copyText, setCopyText] = useState("");
 
+  const categories = [
+    "Settings",
+    "Utility",
+    "Games",
+  ];
+
   const handleCopyUsage = (textToCopy: any) => {
     const commandPart = textToCopy.split(" ")[0];
     const textArea = document.createElement("textarea");
@@ -29,29 +35,36 @@ export default function Commands() {
         </h1>
 
         <div className="mt-8 flex flex-col gap-4">
-          {commands.map((c) => {
-            const isActive = openedCommand === c.name;
+        {categories.map((category) => (
+            <>
+              <h2 className=" mt-10 select-none font-semibold text-neutral-300">
+                {category}
+              </h2>
+          {commands.filter((command) => command.category.includes(category)).map((command) => {
+            const isActive = openedCommand === command.name;
 
             return (
               <div
                 className={`relative cursor-pointer overflow-hidden rounded-lg p-4 text-neutral-300 transition-all duration-300 ${
-                  openedCommand === c.name
+                  openedCommand === command.name
                     ? "max-h-[250px] bg-neutral-700"
                     : "max-h-[90px] bg-neutral-800"
                 }`}
                 onClick={() =>
-                  isActive ? setOpenedCommand("") : setOpenedCommand(c.name)
+                  isActive
+                    ? setOpenedCommand("")
+                    : setOpenedCommand(command.name)
                 }
-                key={c.name}
+                key={command.name}
               >
                 <div className="flex items-center justify-between">
                   <div className="grow overflow-hidden">
                     <h4 className="mb-1 text-lg font-bold text-white">
                       <span className="mr-0.5 text-neutral-500">/</span>
-                      {c.name}
+                      {command.name}
                     </h4>
                     <p className="mb-3 max-w-full overflow-hidden text-ellipsis whitespace-nowrap text-sm">
-                      {c.description}
+                      {command.description}
                     </p>
                   </div>
                   <div className="h-[30px] w-[30px]">
@@ -84,33 +97,33 @@ export default function Commands() {
                       setIsHovered(true);
                     }}
                     onMouseLeave={() => {
-                      setCopyText(c.usage);
+                      setCopyText(command.usage);
                       setIsHovered(false);
                     }}
                     onClick={(e) => {
                       e.stopPropagation();
-                      handleCopyUsage(c.usage);
+                      handleCopyUsage(command.usage);
                     }}
                   >
                     {isHovered ? (
                       <div className="text-gray-400">{copyText}</div>
                     ) : (
-                      <div>{c.usage}</div>
+                      <div>{command.usage}</div>
                     )}
                   </h6>
-                  {c.subcommands && (
+                  {command.subcommands && (
                     <>
                       <h5 className="mb-1">Subcommands</h5>
                       <h6 className="w-fit rounded-md bg-neutral-900 px-2 py-1 font-mono text-xs">
-                        {c.subcommands.join(", ")}
+                        {command.subcommands.join(", ")}
                       </h6>
                     </>
                   )}
-                  {c.options && (
+                  {command.options && (
                     <>
                       <h5 className="mb-1">Options</h5>
                       <h6 className="w-fit rounded-md bg-neutral-900 px-2 py-1 font-mono text-xs">
-                        {c.options.join(", ")}
+                        {command.options.join(", ")}
                       </h6>
                     </>
                   )}
@@ -118,7 +131,10 @@ export default function Commands() {
               </div>
             );
           })}
+        </>
+             ))}{" "}
         </div>
+      
       </main>
     </>
   );

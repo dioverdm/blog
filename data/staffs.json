@@ -1,7 +1,7 @@
 [
     {
         "name": "Dominik",
-        "categorys": [
+        "categories": [
             "Developers",
             "Translators"
         ],
@@ -13,7 +13,7 @@
     {
         "name": "ForGetFulSkyBro",
         "id": 2,
-        "categorys": [
+        "categories": [
             "Developers"
         ],
         "description": "CO-Founder, Developer",
@@ -23,7 +23,7 @@
     {
         "name": "Skeleton Man",
         "id": 3,
-        "categorys": [
+        "categories": [
             "Developers"
         ],
         "description": "Developer",
@@ -33,7 +33,7 @@
     {
         "name": "Sans",
         "id": 4,
-        "categorys": [
+        "categories": [
             "Developers"
         ],
         "description": "Developer",
@@ -43,7 +43,7 @@
     {
         "name": "Gersti",
         "id": 5,
-        "categorys": [
+        "categories": [
             "Developers"
         ],
         "description": "Developer",
@@ -53,7 +53,7 @@
     {
         "name": "FlashJPO",
         "id": 6,
-        "categorys": [
+        "categories": [
             "Admins"
         ],
         "description": "Discord Admin",
@@ -63,7 +63,7 @@
     {
         "name": "Kivvyato",
         "id": 7,
-        "categorys": [
+        "categories": [
             "Admins"
         ],
         "description": "Discord Admin",
@@ -73,7 +73,7 @@
     {
         "name": "Noam",
         "id": 8,
-        "categorys": [
+        "categories": [
             "Translators",
             "Beta Testers"
         ],
@@ -84,7 +84,7 @@
     {
         "name": "iGosko",
         "id": 9,
-        "categorys": [
+        "categories": [
             "Translators"
         ],
         "description": "Spanish Translator",
@@ -94,7 +94,7 @@
     {
         "name": "Filipe",
         "id": 10,
-        "categorys": [
+        "categories": [
             "Translators"
         ],
         "description": "Portuguese Translator",
@@ -104,7 +104,7 @@
     {
         "name": "Mia",
         "id": 11,
-        "categorys": [
+        "categories": [
             "Translators"
         ],
         "description": "Spanish Translator",
@@ -114,7 +114,7 @@
     {
         "name": "Finn",
         "id": 13,
-        "categorys": [
+        "categories": [
             "Contributors"
         ],
         "description": "Higher or Lower Developer, Developer (on break)",
@@ -124,7 +124,7 @@
     {
         "name": "Sean",
         "id": 12,
-        "categorys": [
+        "categories": [
             "Contributors"
         ],
         "description": "EX-Developer",
@@ -134,7 +134,7 @@
     {
         "name": "NightKiller",
         "id": 14,
-        "categorys": [
+        "categories": [
             "Contributors",
             "Beta Testers"
         ],
@@ -145,7 +145,7 @@
     {
         "name": "InvalidKiller",
         "id": 15,
-        "categorys": [
+        "categories": [
             "Contributors"
         ],
         "description": "Discord Moderator",
@@ -155,7 +155,7 @@
     {
         "name": "331/332",
         "id": 16,
-        "categorys": [
+        "categories": [
             "Beta Testers"
         ],
         "description": "Beta Tester, Bug Hunter",
@@ -165,7 +165,7 @@
     {
         "name": "Austin",
         "id": 17,
-        "categorys": [
+        "categories": [
             "Beta Testers"
         ],
         "description": "Beta Tester, Bug Hunter",
@@ -175,7 +175,7 @@
     {
         "name": "DowDaw",
         "id": 18,
-        "categorys": [
+        "categories": [
             "Beta Testers"
         ],
         "description": "Beta Tester",
@@ -185,42 +185,41 @@
     {
         "name": "Grass",
         "id": 19,
-        "categorys": [
+        "categories": [
             "Beta Testers"
         ],
-
-      "description": "Beta Tester",
-      "imageUrl": "https://cdn.wouldyoubot.gg/staff/bughunter/Grass.webp",
-      "websiteUrl": null
+        "description": "Beta Tester",
+        "imageUrl": "https://cdn.wouldyoubot.gg/staff/bughunter/Grass.webp",
+        "websiteUrl": null
     },
     {
-      "name": "Nova",
-      "id": 20,
-      "categorys": [
+        "name": "Nova",
+        "id": 20,
+        "categories": [
             "Beta Testers"
         ],
-      "description": "Beta Tester, Bug Hunter",
-      "imageUrl": "https://cdn.wouldyoubot.gg/staff/bughunter/Nova.webp",
-      "websiteUrl": null
+        "description": "Beta Tester, Bug Hunter",
+        "imageUrl": "https://cdn.wouldyoubot.gg/staff/bughunter/Nova.webp",
+        "websiteUrl": null
     },
     {
-      "name": "Sdriver",
-      "id": 21,
-      "categorys": [
+        "name": "Sdriver",
+        "id": 21,
+        "categories": [
             "Beta Testers"
         ],
-      "description": "Beta Tester",
-      "imageUrl": "https://cdn.wouldyoubot.gg/staff/bughunter/Sdriver.webp",
-      "websiteUrl": "https://sdriver1.carrd.co/"
+        "description": "Beta Tester",
+        "imageUrl": "https://cdn.wouldyoubot.gg/staff/bughunter/Sdriver.webp",
+        "websiteUrl": "https://sdriver1.carrd.co/"
     },
     {
-      "name": "Yareaj",
-      "id": 22,
-      "categorys": [
+        "name": "Yareaj",
+        "id": 22,
+        "categories": [
             "Beta Testers"
         ],
-      "description": "Beta Tester, Documentation Writer",
-      "imageUrl": "https://cdn.wouldyoubot.gg/staff/bughunter/Yareaj.webp",
-      "websiteUrl": null
+        "description": "Beta Tester, Documentation Writer",
+        "imageUrl": "https://cdn.wouldyoubot.gg/staff/bughunter/Yareaj.webp",
+        "websiteUrl": null
     }
 ]

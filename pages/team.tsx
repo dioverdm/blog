@@ -41,7 +41,7 @@ export default function Team() {
                 className="text-pretty mx-auto mt-10 grid max-w-2xl grid-cols-1 justify-center gap-6 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-4 lg:gap-8 "
               >
                 {staffs
-                  .filter((staff) => staff.categorys.includes(role))
+                  .filter((staff) => staff.categories.includes(role))
                   .map((staff) => (
                     // eslint-disable-next-line react/jsx-key
                     <li
