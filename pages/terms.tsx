@@ -43,11 +43,15 @@ export default function Terms() {
           Discord&apos;s services.
         </p>
 
-        <h3 className="my-4 text-lg font-bold text-white">
-        Age Restriction.
-        </h3>
+        <h3 className="my-4 text-lg font-bold text-white">Age Restriction.</h3>
         <p>
-        The Would You Bot is not intended for use by individuals under the age of 13. By using the Would You Bot, you represent and warrant that you are at least 13 years of age. If you are under 13 years of age, you are not permitted to use the Would You Bot. If we become aware that a user is under the age of 13, we will take steps to terminate their access to the Would You Bot and delete any personal information collected from them, if applicable.
+          The Would You Bot is not intended for use by individuals under the age
+          of 13. By using the Would You Bot, you represent and warrant that you
+          are at least 13 years of age. If you are under 13 years of age, you
+          are not permitted to use the Would You Bot. If we become aware that a
+          user is under the age of 13, we will take steps to terminate their
+          access to the Would You Bot and delete any personal information
+          collected from them, if applicable.
         </p>
 
         <h3 className="my-4 text-lg font-bold text-white">
@@ -93,9 +97,19 @@ export default function Terms() {
           Warranty Disclaimer.
         </h3>
         <p>
-        1. The bot may experience downtime, errors, or technical issues beyond our control. We do not accept responsibility for any inconvenience, loss of data, or damages resulting from the use of this bot. <br /><br />
-    2. Your use of this bot is at your own risk. We disclaim all warranties, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, and non-infringement.<br /><br />
-    3. We reserve the right to modify, suspend, or terminate the bot service at any time without prior notice.<br />
+          1. The bot may experience downtime, errors, or technical issues beyond
+          our control. We do not accept responsibility for any inconvenience,
+          loss of data, or damages resulting from the use of this bot. <br />
+          <br />
+          2. Your use of this bot is at your own risk. We disclaim all
+          warranties, express or implied, including but not limited to
+          warranties of merchantability, fitness for a particular purpose, and
+          non-infringement.
+          <br />
+          <br />
+          3. We reserve the right to modify, suspend, or terminate the bot
+          service at any time without prior notice.
+          <br />
         </p>
 
         <h3 className="my-4 text-lg font-bold text-white">Products.</h3>
