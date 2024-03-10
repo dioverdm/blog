@@ -177,7 +177,13 @@ export default function Privacy() {
         </p>
 
         <h3 className="my-4 text-lg font-bold text-white"> Age Limit</h3>
-        <p> The Bot is not intended for use by individuals under the age of 13. The Creator does not knowingly collect personal information from children under 13 years of age. If you are a parent or guardian and believe that your child has provided personal information to the Bot, please contact the Creator to request deletion of that information.
+        <p>
+          {" "}
+          The Bot is not intended for use by individuals under the age of 13.
+          The Creator does not knowingly collect personal information from
+          children under 13 years of age. If you are a parent or guardian and
+          believe that your child has provided personal information to the Bot,
+          please contact the Creator to request deletion of that information.
         </p>
 
         <h3 className="my-4 text-lg font-bold text-white">
