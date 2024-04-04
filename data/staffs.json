@@ -221,5 +221,13 @@
         "description": "Beta Tester, Documentation Writer",
         "imageUrl": "https://cdn.wouldyoubot.gg/staff/bughunter/Yareaj.webp",
         "websiteUrl": null
+    },
+    {
+        "name": "dpaulos6",
+        "id": 23,
+        "categories": ["Contributors"],
+        "description": "Styling Wizard",
+        "imageUrl": "https://avatars.githubusercontent.com/u/51181228?v=4",
+        "websiteUrl": "https://dpaulos6.xyz/"
     }
 ]
