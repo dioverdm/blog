@@ -38,7 +38,7 @@ const BlogPosts: NextPage<PageProps> = ({ posts }) => {
         <span className="text-brand-blue-100 drop-shadow-blue-glow">You</span>{" "}
         Blog
       </h1>
-
+      
       <div className="mt-8 flex flex-col gap-4">
         {posts.length === 0 && (
           <p className="text-lg text-neutral-300">
