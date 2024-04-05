@@ -54,7 +54,7 @@ export default function Team() {
                     // eslint-disable-next-line react/jsx-key
                     <li
                       key={staff.id} // Add a unique key prop
-                      className="flex basis-full transform flex-col content-center rounded-2xl bg-neutral-800 px-4 py-8 shadow-lg transition duration-300 ease-in-out hover:shadow-2xl sm:basis-1/3 sm:px-6 lg:basis-1/5 lg:px-8 lg:hover:-translate-y-2 xl:px-10"
+                      className="flex basis-full transform flex-col content-center rounded-2xl bg-neutral-800 px-4 py-8 shadow-lg transition duration-300 ease-in-out hover:shadow-2xl sm:basis-1/3 sm:px-6 lg:basis-[22.5%] lg:px-8 lg:hover:-translate-y-2 xl:px-10"
                     >
                       <Image
                         className="mx-auto h-28 w-28 rounded-full md:h-24 md:w-24"
