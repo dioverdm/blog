@@ -1,6 +1,6 @@
 [
     {
-        "name": "Dominik",
+        "name": "Dominik Koch",
         "categories": [
             "Developers",
             "Translators"
@@ -8,7 +8,7 @@
         "id": 1,
         "description": "Founder, Lead Developer, German Translator",
         "imageUrl": "https://cdn.wouldyoubot.gg/staff/developer/Dominik.webp",
-        "websiteUrl": "https://dominikko.ch/"
+        "websiteUrl": "https://m.wikidata.org/wiki/Q124829474"
     },
     {
         "name": "ForGetFulSkyBro",
@@ -221,5 +221,21 @@
         "description": "Beta Tester, Documentation Writer",
         "imageUrl": "https://cdn.wouldyoubot.gg/staff/bughunter/Yareaj.webp",
         "websiteUrl": null
+    },
+    {
+        "name": "dpaulos6",
+        "id": 23,
+        "categories": ["Contributors"],
+        "description": "Frontend Styling Specialist",
+        "imageUrl": "https://cdn.wouldyoubot.gg/staff/special/Paulos.webp",
+        "websiteUrl": "https://dpaulos6.xyz?utm_source=wouldyoubot.gg"
+    },
+    {
+        "name": "Paul",
+        "id": 24,
+        "categories": ["Developers"],
+        "description": "Web Developer",
+        "imageUrl": "https://cdn.wouldyoubot.gg/staff/developer/Paul.webp",
+        "websiteUrl": "https://github.com/Jester0027"
     }
 ]

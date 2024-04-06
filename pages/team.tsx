@@ -18,27 +18,35 @@ export default function Team() {
       <Head>
         <title>Would You - Team</title>
       </Head>
-      <main className="px-8 xl:px-[17vw]">
-        <h1 className="mt-36 text-4xl font-bold text-white">
-          <span className="text-brand-red-100 drop-shadow-red-glow">Meet </span>{" "}
-          <span className="text-brand-blue-100 drop-shadow-blue-glow">
-            {" "}
-            the{" "}
-          </span>
-          Team
-        </h1>
-        <p className="text-neutral-500">
-          Meet the amazing team and contributors behind Would You.
-        </p>
-        <div className="mx-auto h-full max-w-5xl justify-center text-center">
-          {roles.map((role) => (
+      <main className="">
+        <div className="flex flex-col px-8 xl:px-[17vw]">
+          <h1 className="mt-36 text-4xl font-bold text-white">
+            <span className="text-brand-red-100 drop-shadow-red-glow">
+              Meet{" "}
+            </span>{" "}
+            <span className="text-brand-blue-100 drop-shadow-blue-glow">
+              {" "}
+              the{" "}
+            </span>
+            Team
+          </h1>
+          <p className="text-neutral-500">
+            Meet the amazing team and contributors behind Would You.
+          </p>
+        </div>
+        <div className="mx-auto h-full max-w-5xl justify-center px-8 text-center">
+          {roles.map((role, i) => (
             <>
-              <h2 className=" mt-10 select-none font-semibold text-neutral-300">
+              <h2
+                key={role}
+                className="mt-10 select-none font-semibold text-neutral-300"
+              >
                 {role}
               </h2>
               <ul
+                key={i}
                 role="list"
-                className="text-pretty mx-auto mt-10 grid max-w-2xl grid-cols-1 justify-center gap-6 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-4 lg:gap-8 "
+                className="text-pretty mx-auto mt-10 flex max-w-2xl flex-wrap justify-center gap-6 lg:mx-0 lg:max-w-none lg:gap-8 "
               >
                 {staffs
                   .filter((staff) => staff.categories.includes(role))
@@ -46,7 +54,7 @@ export default function Team() {
                     // eslint-disable-next-line react/jsx-key
                     <li
                       key={staff.id} // Add a unique key prop
-                      className="transform content-center rounded-2xl bg-neutral-800 px-4 py-8 shadow-lg transition duration-300 ease-in-out hover:shadow-2xl sm:px-6 lg:px-8 lg:hover:-translate-y-2 xl:px-10"
+                      className="flex basis-full transform flex-col content-center rounded-2xl bg-neutral-800 px-4 py-8 shadow-lg transition duration-300 ease-in-out hover:shadow-2xl sm:basis-1/3 sm:px-6 lg:basis-[22.5%] lg:px-8 lg:hover:-translate-y-2 xl:px-10"
                     >
                       <Image
                         className="mx-auto h-28 w-28 rounded-full md:h-24 md:w-24"
