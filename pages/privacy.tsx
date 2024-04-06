@@ -8,7 +8,7 @@ export default function Privacy() {
       </h1>
       <div>
         <h3 className="mb-4 text-lg font-bold text-white">
-          Last updated and effective July 27, 2023
+          Last updated and effective March 08, 2024
         </h3>
         <p>
           Thank you for choosing to be part of our community at Would
@@ -175,6 +175,17 @@ export default function Privacy() {
           </Link>
           .
         </p>
+
+        <h3 className="my-4 text-lg font-bold text-white"> Age Limit</h3>
+        <p>
+          {" "}
+          The Bot is not intended for use by individuals under the age of 13.
+          The Creator does not knowingly collect personal information from
+          children under 13 years of age. If you are a parent or guardian and
+          believe that your child has provided personal information to the Bot,
+          please contact the Creator to request deletion of that information.
+        </p>
+
         <h3 className="my-4 text-lg font-bold text-white">
           Analytics Provided by Others
         </h3>
@@ -317,8 +328,6 @@ export default function Privacy() {
           manage our website and to enhance our site based on the usage pattern
           we receive.
         </p>
-        <h3> Controls for Do-Not-Track features.</h3>
-        <p>We do not track you.</p>
         <h3> Do California residents have specific privacy rights?</h3>
         <p>
           California Civil Code Section 1798.83, also known as the &quot;Shine
@@ -379,18 +388,6 @@ export default function Privacy() {
             https://wouldyoubot.gg/discord
           </Link>
           .
-        </p>
-        <h3 className="my-4 text-lg font-bold text-white">Attribution</h3>
-        <p>
-          Thanks to{" "}
-          <Link
-            href="https://scrumpbot.com/"
-            target={"_blank"}
-            className="text-white underline"
-          >
-            https://scrumpbot.com/
-          </Link>{" "}
-          for help on this privacy policy.
         </p>
       </div>
     </main>

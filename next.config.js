@@ -6,12 +6,25 @@ const nextConfig = {
   },
 
   images: {
-    remotePatterns: [      {
+    remotePatterns: [{
       protocol: 'https',
       hostname: 'cdn.discordapp.com',
       port: '',
       pathname: '/',
-    },],
+    },
+    {
+      protocol: 'https',
+      hostname: 'cdn.wouldyoubot.gg',
+      port: '',
+      pathname: '/**'
+    },
+    {
+      protocol: "https",
+      hostname: "avatars.githubusercontent.com",
+      port: "",
+      pathname: "/**",
+    },
+    ],
   },
 
   async redirects() {
