@@ -4,7 +4,6 @@ import "@/styles/globals.css";
 import "@/styles/index.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import Snowfall from "react-snowfall";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -13,7 +12,6 @@ export default function App({ Component, pageProps }: AppProps) {
         <title>Would You - The Discord Bot</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/Logo.png" />
-        <link rel="canonical" href="https://wouldyoubot.gg" />
         {pageProps.frontMatter?.thumbnail?.large ? (
           <>
             <meta
@@ -27,20 +25,12 @@ export default function App({ Component, pageProps }: AppProps) {
             <meta
               key="og:image"
               property="og:image"
-              content="https://i.imgur.com/mtci9pz.png"
+              content="https://i.imgur.com/OPQaiVa.png"
             />
           </>
         )}
       </Head>
       <div className="flex min-h-screen flex-col">
-        <Snowfall
-          snowflakeCount={45}
-          style={{
-            position: "fixed",
-            width: "100vw",
-            height: "100vh",
-          }}
-        />
         <Navbar />
         <div className="grow">
           <Component {...pageProps} />
