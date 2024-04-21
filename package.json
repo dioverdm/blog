@@ -2,13 +2,13 @@
   "name": "wouldyou-web-v3",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
+    "scripts": {
     "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start -p 2123",
     "lint": "next lint",
     "format": "prettier --write ./**/*.{ts,tsx}",
-    "postbuild": "node sitemap.js",
+    "postbuild": "node sitemap.js && node rss.js",
     "docker:build": "docker build -t dominikdoesdev/wy-website .",
     "docker:start": "docker run -p 2123:2123 dominikdoesdev/wy-website"
   },
@@ -37,6 +37,7 @@
     "react-fast-marquee": "^1.6.0",
     "react-snowfall": "^1.2.1",
     "sharp": "^0.33.0",
+    "rss": "^1.2.2",
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.0.4",
