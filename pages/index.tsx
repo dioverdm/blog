@@ -87,7 +87,7 @@ const Home = () => {
               "name":"Would You Bot",
               "url":"https://wouldyoubot.gg",
               "logo":"https://i.imgur.com/YjwOfOX.png",
-              "image":"https://i.imgur.com/OPQaiVa.png",
+              "image":"https://i.imgur.com/BsWSxze.png",
               "description":"Would you lets you play Would You Rather, Never Have I Ever, Higher or Lower, Truth or Dare and What Would You Do on Discord!",
               "sameAs":[
                  "https://twitter.com/wouldyoubot",
