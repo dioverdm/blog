@@ -42,13 +42,13 @@ const questions = [
 const getRandomQuestion = () =>
   questions[Math.floor(Math.random() * questions.length)];
 
-const Home = () => {
+const Home = (servers: any) => {
   const currentDate = new Date().toLocaleString();
   const [replayedRounds, setReplayedRounds] = useState<number>(0);
   const [currentQuestion, setCurrentQuestion] = useState<string>(
     getRandomQuestion(),
   );
-  const [serverCount, setServerCount] = useState<number>(7700);
+  const [serverCount, setServerCount] = useState<number>(13000);
 
   const date = new Date();
 
@@ -260,12 +260,20 @@ const Home = () => {
                 </span>{" "}
                 users entertained
               </h3>
-
-              <ServerMarquee servers={servers[0]} speed={40} />
               <ServerMarquee
-                servers={servers[1]}
-                speed={30}
+                servers={servers.serverCount.slice(
+                  0,
+                  Math.ceil(servers.serverCount.length / 2),
+                )}
+                speed={40}
                 direction="right"
+              />
+              <ServerMarquee
+                servers={servers.serverCount.slice(
+                  Math.ceil(servers.serverCount.length / 2),
+                )}
+                speed={30}
+                direction="left"
               />
             </div>
           </section>
@@ -376,3 +384,24 @@ const Home = () => {
 };
 
 export default Home;
+
+export async function getServerSideProps() {
+  const data = await fetch(
+    "https://liberal-snail-47202.upstash.io/get/server_count",
+    {
+      method: "POST",
+      headers: {
+        Authorization:
+          "Bearer " + process.env.UPSTASH_API_KEY,
+      },
+    },
+  );
+
+  const result = await data.json();
+
+  return {
+    props: {
+      serverCount: JSON.parse(result.result),
+    },
+  };
+}
