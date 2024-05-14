@@ -47,7 +47,6 @@ const Home = (servers: any) => {
   const [currentQuestion, setCurrentQuestion] = useState<string>(
     getRandomQuestion(),
   );
-  const [serverCount, setServerCount] = useState<number>(13000);
 
   const date = new Date();
 
@@ -56,15 +55,6 @@ const Home = (servers: any) => {
     date.getMonth() + 1,
     date.getDate(),
   ].join("/")} - Daily Message`;
-
-  useEffect(() => {
-    fetch("https://japi.rest/discord/v1/application/981649513427111957/")
-      .then(async (response) => {
-        const data = await response.json();
-        setServerCount(data.data.bot.approximate_guild_count ?? 0);
-      })
-      .catch();
-  }, []);
 
   const replay = () => {
     if (replayedRounds < 3) {
@@ -247,7 +237,7 @@ const Home = (servers: any) => {
               <h2>
                 Trusted by{" "}
                 <span className="bg-gradient-brand bg-clip-text font-bold text-transparent">
-                  {serverCount.toLocaleString()}+
+                  {servers.serverNumber.toLocaleString()}+
                 </span>{" "}
                 communities
               </h2>
@@ -389,17 +379,25 @@ export async function getServerSideProps() {
     {
       method: "POST",
       headers: {
-        Authorization:
-          "Bearer " + process.env.UPSTASH_API_KEY,
+        Authorization: "Bearer " + process.env.UPSTASH_API_KEY,
       },
     },
   );
 
   const result = await data.json();
 
+  const serverNumberCount = await fetch(
+    "https://japi.rest/discord/v1/application/981649513427111957/",
+  );
+
+  const serverNumber = await serverNumberCount.json();
+
   return {
     props: {
-      serverCount: JSON.parse(result.result).filter((g: any) => g.name !== "Pornhub"),
+      serverCount: JSON.parse(result.result).filter(
+        (g: any) => g.name !== "Pornhub",
+      ),
+      serverNumber: serverNumber.data.bot.approximate_guild_count || 13000,
     },
   };
 }
