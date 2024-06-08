@@ -3,7 +3,7 @@ const path = require("path");
 
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: "https://wouldyoubot.gg/",
+  siteUrl: "https://pogoos.blog/",
   generateRobotsTxt: true,
 
   // Add blog post paths, since they are loaded from an external directory
