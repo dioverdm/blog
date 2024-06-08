@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://wouldyoubot.gg/
+Host: https://pogoos.blog/
 
 # Sitemaps
-Sitemap: https://wouldyoubot.gg/sitemap.xml
+Sitemap: https://pogoos.blog/sitemap.xml
