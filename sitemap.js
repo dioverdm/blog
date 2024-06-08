@@ -39,7 +39,7 @@ function generateSitemap(entries, baseUrl) {
 }
 
 function main() {
-  const baseUrl = 'https://wouldyoubot.gg';
+  const baseUrl = 'https://pogoos.blog';
   const blogPostsDir = path.join(__dirname, 'posts');
   const pagesDir = path.join(__dirname, 'pages');
 
@@ -51,7 +51,7 @@ function main() {
   }));
 
   const pageEntries = getFilesRecursively(pagesDir, '_', ['.mdx', '.tsx']).map((file) => ({
-    url: file.replace(pagesDir, '').replace(/\.mdx|\.tsx$/, '').replace("https://wouldyoubot.gg/index/", ''),
+    url: file.replace(pagesDir, '').replace(/\.mdx|\.tsx$/, '').replace("https://pogoos.blog/index/", ''),
     lastmod: fs.statSync(file).mtime.toISOString(),
     priority: 1.0,
     changefreq: 'weekly',
