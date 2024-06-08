@@ -35,16 +35,16 @@ function getFilesRecursively(dir, excludePrefix = '_') {
   
   // Generate RSS feed
   const feed = new RSS({
-    title: 'Would You Bot RSS Feed',
-    site_url: 'https://wouldyoubot.gg',
-    feed_url: 'https://wouldyoubot.gg/rss.xml',
+    title: '¿Podrías botar el feed RSS?',
+    site_url: 'https://pogoos.blog',
+    feed_url: 'https://pogoos.blog/rss.xml',
   });
   
   POSTS.forEach((post) => {
     feed.item({
       title: post.data.title,
       description: post.data.description,
-      url: `https://wouldyoubot.gg/blog/${path.basename(post.filePath, '.mdx')}`,
+      url: `https://pogoos.blog/blog/${path.basename(post.filePath, '.mdx')}`,
       date: new Date(post.data.seoDate),
     });
   });
